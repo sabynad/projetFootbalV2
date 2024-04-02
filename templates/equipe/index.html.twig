@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Equipe index{% endblock %}
+
+{% block body %}
+    <h1>Equipe index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Categorie</th>
+                <th>Championnat</th>
+                <th>Total_point</th>
+                <th>Logo</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for equipe in equipes %}
+            <tr>
+                <td>{{ equipe.id }}</td>
+                <td>{{ equipe.nom }}</td>
+                <td>{{ equipe.categorie }}</td>
+                <td>{{ equipe.championnat }}</td>
+                <td>{{ equipe.totalPoint }}</td>
+                {# <td>{{ equipe.logo }}</td> #}
+                 <td>
+                    <img style="width: 120px; " class="rounded-circle" src="{{ vich_uploader_asset(equipe, 'imageFile') }}"/>
+                </td>
+
+                <td>
+                    <a href="{{ path('app_equipe_show', {'id': equipe.id}) }}">show</a>
+                    <a href="{{ path('app_equipe_edit', {'id': equipe.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_equipe_new') }}">Create new</a>
+{% endblock %}
