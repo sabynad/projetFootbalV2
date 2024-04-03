@@ -229,9 +229,17 @@ class Equipe
     }
 
     //methode pour récupérer le total des oppositions 
+
     public function getNombreMatch(): ?int
-    {
-        return $this->getOppositions()->count();
+{
+    $oppositions = $this->getOppositions();
+    $totalMatchs = 0;
+
+    foreach ($oppositions as $opposition) {
+        $totalMatchs += $opposition->getScoreEquipe1() + $opposition->getScoreEquipe2();
     }
+
+    return $totalMatchs;
+}
 
 }
