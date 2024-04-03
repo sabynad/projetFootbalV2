@@ -13,6 +13,7 @@
                 <th>Categorie</th>
                 <th>Championnat</th>
                 <th>Total_point</th>
+                <th>nbr match joue</th>
                 <th>Logo</th>
                 <th>actions</th>
             </tr>
@@ -25,9 +26,9 @@
                 <td>{{ equipe.categorie }}</td>
                 <td>{{ equipe.championnat }}</td>
                 <td>{{ equipe.totalPoint }}</td>
-                {# <td>{{ equipe.logo }}</td> #}
-                 <td>
-                    <img style="width: 120px; " class="rounded-circle" src="{{ vich_uploader_asset(equipe, 'imageFile') }}"/>
+                <td>{{ equipe.getNombreMatch }}</td>
+                <td>
+                    <img style="width: 80px; " class="rounded-circle" src="{{ vich_uploader_asset(equipe, 'imageFile') }}"/>
                 </td>
 
                 <td>

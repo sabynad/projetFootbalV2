@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Joueur index{% endblock %}
+
+{% block body %}
+    <h1>Joueur index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Date_naissance</th>
+                <th>Numero</th>
+                <th>Poste</th>
+                <th>Numero_licence</th>
+                <th>CartonJaune</th>
+                <th>CartonRouge</th>
+                <th>MatchJoue</th>
+                <th>NbrPasse</th>
+                <th>NbrPasseDecisif</th>
+                <th>NbrTir</th>
+                <th>NbrBut</th>
+                <th>ArretGardien</th>
+                <th>ButEncaisser</th>
+                <th>PenaltyDispute</th>
+                <th>PenaltyArrete</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for joueur in joueurs %}
+            <tr>
+                <td>{{ joueur.id }}</td>
+                <td>{{ joueur.nom }}</td>
+                <td>{{ joueur.prenom }}</td>
+                <td>{{ joueur.dateNaissance ? joueur.dateNaissance|date('Y-m-d') : '' }}</td>
+                <td>{{ joueur.numero }}</td>
+                <td>{{ joueur.poste }}</td>
+                <td>{{ joueur.numeroLicence }}</td>
+                <td>{{ joueur.cartonJaune }}</td>
+                <td>{{ joueur.cartonRouge }}</td>
+                <td>{{ joueur.matchJoue }}</td>
+                <td>{{ joueur.nbrPasse }}</td>
+                <td>{{ joueur.nbrPasseDecisif }}</td>
+                <td>{{ joueur.nbrTir }}</td>
+                <td>{{ joueur.nbrBut }}</td>
+                <td>{{ joueur.arretGardien }}</td>
+                <td>{{ joueur.butEncaisser }}</td>
+                <td>{{ joueur.penaltyDispute }}</td>
+                <td>{{ joueur.penaltyArrete }}</td>
+                <td>
+                    <a href="{{ path('app_joueur_show', {'id': joueur.id}) }}">show</a>
+                    <a href="{{ path('app_joueur_edit', {'id': joueur.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="19">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_joueur_new') }}">Create new</a>
+{% endblock %}

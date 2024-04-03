@@ -10,6 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use symfony\component\HttpFoundation\File\File;
 
+
 #[ORM\Entity(repositoryClass: EquipeRepository::class)]
 
 #[Vich\Uploadable]
@@ -32,8 +33,7 @@ class Equipe
     #[ORM\Column(nullable: true)]
     private ?int $total_point = null;
 
-    // #[ORM\Column(type: Types::TEXT)]
-    // private ?string $logo = null;
+
 
     //vich upload
     #[Vich\UploadableField(mapping: 'logo_images', fileNameProperty: 'ImageName')]
@@ -47,9 +47,17 @@ class Equipe
     #[ORM\OneToMany(targetEntity: Opposition::class, mappedBy: 'equipe1')]
     private Collection $oppositions;
 
+    #[ORM\OneToMany(targetEntity: Entrainer::class, mappedBy: 'equipe')]
+    private Collection $entrainers;
+
+    #[ORM\OneToMany(targetEntity: Joueur::class, mappedBy: 'equipe')]
+    private Collection $joueurs;
+
     public function __construct()
     {
         $this->oppositions = new ArrayCollection();
+        $this->entrainers = new ArrayCollection();
+        $this->joueurs = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -105,17 +113,7 @@ class Equipe
         return $this;
     }
 
-    // public function getLogo(): ?string
-    // {
-    //     return $this->logo;
-    // }
-
-    // public function setLogo(string $logo): static
-    // {
-    //     $this->logo = $logo;
-
-    //     return $this;
-    // }
+    
 
     public function setImageFile(?File $imageFile = null): void
     {
@@ -169,4 +167,71 @@ class Equipe
 
         return $this;
     }
+
+    /**
+     * @return Collection<int, Entrainer>
+     */
+    public function getEntrainers(): Collection
+    {
+        return $this->entrainers;
+    }
+
+    public function addEntrainer(Entrainer $entrainer): static
+    {
+        if (!$this->entrainers->contains($entrainer)) {
+            $this->entrainers->add($entrainer);
+            $entrainer->setEquipe($this);
+        }
+
+        return $this;
+    }
+
+    public function removeEntrainer(Entrainer $entrainer): static
+    {
+        if ($this->entrainers->removeElement($entrainer)) {
+            // set the owning side to null (unless already changed)
+            if ($entrainer->getEquipe() === $this) {
+                $entrainer->setEquipe(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Joueur>
+     */
+    public function getJoueurs(): Collection
+    {
+        return $this->joueurs;
+    }
+
+    public function addJoueur(Joueur $joueur): static
+    {
+        if (!$this->joueurs->contains($joueur)) {
+            $this->joueurs->add($joueur);
+            $joueur->setEquipe($this);
+        }
+
+        return $this;
+    }
+
+    public function removeJoueur(Joueur $joueur): static
+    {
+        if ($this->joueurs->removeElement($joueur)) {
+            // set the owning side to null (unless already changed)
+            if ($joueur->getEquipe() === $this) {
+                $joueur->setEquipe(null);
+            }
+        }
+
+        return $this;
+    }
+
+    //methode pour récupérer le total des oppositions 
+    public function getNombreMatch(): ?int
+    {
+        return $this->getOppositions()->count();
+    }
+
 }

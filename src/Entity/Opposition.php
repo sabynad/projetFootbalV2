@@ -95,4 +95,6 @@ class Opposition
 
         return $this;
     }
+
+
 }

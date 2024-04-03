@@ -17,8 +17,10 @@ class OppositionController extends AbstractController
     #[Route('/', name: 'app_opposition_index', methods: ['GET'])]
     public function index(OppositionRepository $oppositionRepository): Response
     {
+        
         return $this->render('opposition/index.html.twig', [
             'oppositions' => $oppositionRepository->findAll(),
+
         ]);
     }
 

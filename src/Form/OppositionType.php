@@ -21,11 +21,11 @@ class OppositionType extends AbstractType
             ->add('score_equipe2')
             ->add('equipe1', EntityType::class, [
                 'class' => Equipe::class,
-                'choice_label' => 'id',
+                'choice_label' => 'nom',
             ])
             ->add('equipe2', EntityType::class, [
                 'class' => Equipe::class,
-                'choice_label' => 'id',
+                'choice_label' => 'nom',
             ])
         ;
     }

@@ -35,6 +35,11 @@ class AppFixtures extends Fixture
             'Football Club Ollioules',
             'Assocaition Sportive Lery',
             'Jeunesse Sportive Seynoise',
+            'Olympique de mes deux',
+            'Football club des fraises',
+            'Bayern de Saint Jean',
+            'AS Mes glaouis'
+
             
         ];
         
@@ -43,29 +48,38 @@ class AppFixtures extends Fixture
             $equipe->setNom($nom)
                    ->setCategorie('Senior')
                    ->setChampionnat('Régional 1')
-                   ->setImageName('quelques-choses.png');
+                   ->setImageName('81.jpg');
+
             $manager->persist($equipe);
-        }
 
+            $equipes[] = $equipe;
 
-        // Récupération de toutes les équipes
-        $equipes = $manager->getRepository(Equipe::class)->findAll();
+            $equipesDisponibles = $equipes;
 
-        // Création des oppositions entre toutes les paires d'équipes
-        foreach ($equipes as $key => $equipe1) {
-            foreach ($equipes as $key2 => $equipe2) {
-                if ($key != $key2) {
+            if (!empty($equipesDisponibles)) {
+
+                $equipe1Index = mt_rand(0, count($equipesDisponibles) - 1);
+
+                $equipe1 = $equipesDisponibles[$equipe1Index];
+                unset($equipesDisponibles[$equipe1Index]); 
+            
+                if (!empty($equipesDisponibles)) {
+
+                    $equipe2 = $equipesDisponibles[array_rand($equipesDisponibles)];
+
                     $opposition = new Opposition();
                     $opposition->setEquipe1($equipe1)
-                               ->setEquipe2($equipe2)
-                               ->setScoreEquipe1(mt_rand(0, 3))
-                               ->setScoreEquipe2(mt_rand(0, 3))
-                               ->setDate($faker->dateTimeBetween('-7 months'));
+                            ->setEquipe2($equipe2)
+                            ->setScoreEquipe1(mt_rand(0, 3))
+                            ->setScoreEquipe2(mt_rand(0, 3))
+                            ->setDate($faker->dateTimeBetween('-7 months'));
                     $manager->persist($opposition);
                 }
             }
-        }
 
-        $manager->flush();
+            }
+
+            $manager->flush();
     }
 }
+
