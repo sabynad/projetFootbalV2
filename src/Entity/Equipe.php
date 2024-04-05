@@ -249,7 +249,7 @@ class Equipe
 
 
     // total de match joué par equipe
-    public function getNombreMatchEquipe(): int
+    public function getNbrMatchEquipe(): int
     {
         $count = 0;
         foreach ($this->oppositions as $opposition) {
