@@ -9,6 +9,7 @@ use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use symfony\component\HttpFoundation\File\File;
+use Doctrine\ORM\EntityManagerInterface;
 
 
 #[ORM\Entity(repositoryClass: EquipeRepository::class)]
@@ -228,18 +229,59 @@ class Equipe
         return $this;
     }
 
-    //methode pour récupérer le total des oppositions 
-
-    public function getNombreMatch(): ?int
-{
-    $oppositions = $this->getOppositions();
-    $totalMatchs = 0;
-
-    foreach ($oppositions as $opposition) {
-        $totalMatchs += $opposition->getScoreEquipe1() + $opposition->getScoreEquipe2();
+    // total points sur l'ensemble des matchs
+    public function getTotalPoints(): int
+    {
+        $totalPoints = 0;
+        foreach ($this->oppositions as $opposition) {
+            $scoreEquipe1 = $opposition->getScoreEquipe1();
+            $scoreEquipe2 = $opposition->getScoreEquipe2();
+    
+            // Points pour l'équipe 1
+            $totalPoints += $scoreEquipe1 > $scoreEquipe2 ? 3 : ($scoreEquipe1 === $scoreEquipe2 ? 1 : 0);
+            
+            // Points pour l'équipe 2
+            $totalPoints += $scoreEquipe2 > $scoreEquipe1 ? 3 : ($scoreEquipe2 === $scoreEquipe1 ? 1 : 0);
+        }
+        return $totalPoints;
     }
+    //-----------------------------------------------------------
 
-    return $totalMatchs;
-}
+
+    // total de match joué par equipe
+    public function getNombreMatchEquipe(): int
+    {
+        $count = 0;
+        foreach ($this->oppositions as $opposition) {
+            if ($opposition->getEquipe1() === $this || $opposition->getEquipe2() === $this) {
+                $count++;
+            }
+        }
+        return $count;
+
+    }
+    // ----------------------------------------------------------------
+
+
+ 
+
+    //methode pour récupérer le total des matchs joués par équipe
+    
+    // public function getNombreMatchEquipe(Equipe $equipe): int
+    // {
+        
+    //     $query = $this->createQuery(
+    //         'SELECT COUNT(o.id)
+    //         FROM Opposition o.
+    //         WHERE o.equipe1 = :equipe OR o.equipe2 = :equipe'
+    //     )->setParameter('equipe', $equipe);
+    
+    //     $result = $query->getSingleScalarResult();
+    
+    //     return $result;
+    // }
+
+     //-------------------------------------------------------------
+    
 
 }

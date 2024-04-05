@@ -11,16 +11,21 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
-#[Route('/equipe')]
-class EquipeController extends AbstractController
-{
-    #[Route('/', name: 'app_equipe_index', methods: ['GET'])]
-    public function index(EquipeRepository $equipeRepository): Response
+    #[Route('/equipe')]
+    class EquipeController extends AbstractController
     {
-        return $this->render('equipe/index.html.twig', [
-            'equipes' => $equipeRepository->findAll(),
-        ]);
-    }
+        #[Route('/', name: 'app_equipe_index', methods: ['GET'])]
+        public function index(EquipeRepository $equipeRepository): Response
+        {
+            
+            return $this->render('equipe/index.html.twig', [
+                'equipes' => $equipeRepository->findAll(),
+            ]);
+        }
+
+
+
+
 
     #[Route('/new', name: 'app_equipe_new', methods: ['GET', 'POST'])]
     public function new(Request $request, EntityManagerInterface $entityManager): Response
@@ -78,4 +83,9 @@ class EquipeController extends AbstractController
 
         return $this->redirectToRoute('app_equipe_index', [], Response::HTTP_SEE_OTHER);
     }
+
+
+    
+
+
 }

@@ -8,6 +8,7 @@ use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
 class JoueurType extends AbstractType
 {
@@ -20,7 +21,14 @@ class JoueurType extends AbstractType
                 'widget' => 'single_text',
             ])
             ->add('numero')
-            ->add('poste')
+            ->add('poste', ChoiceType::class,[
+                'choices' => [
+                    'Attaquants' => 'Attaquant',
+                    'Milieux' => 'Milieux',
+                    'Défenseurs' => 'Défenseurs',
+                    'Gardiens' => 'Gardien',
+                ],
+            ])
             ->add('numero_licence')
             ->add('cartonJaune')
             ->add('cartonRouge')
