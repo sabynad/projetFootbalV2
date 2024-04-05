@@ -2,14 +2,15 @@
 
 namespace App\Entity;
 
-use App\Repository\EquipeRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
-use Vich\UploaderBundle\Mapping\Annotation as Vich;
-use symfony\component\HttpFoundation\File\File;
+use App\Repository\EquipeRepository;
+use App\Repository\OppositionRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use Doctrine\Common\Collections\Collection;
+use symfony\component\HttpFoundation\File\File;
+use Doctrine\Common\Collections\ArrayCollection;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 
 #[ORM\Entity(repositoryClass: EquipeRepository::class)]
@@ -229,21 +230,29 @@ class Equipe
         return $this;
     }
 
+    
     // total points sur l'ensemble des matchs
     public function getTotalPoints(): int
     {
-        $totalPoints = 0;
-        foreach ($this->oppositions as $opposition) {
-            $scoreEquipe1 = $opposition->getScoreEquipe1();
-            $scoreEquipe2 = $opposition->getScoreEquipe2();
-    
-            // Points pour l'équipe 1
-            $totalPoints += $scoreEquipe1 > $scoreEquipe2 ? 3 : ($scoreEquipe1 === $scoreEquipe2 ? 1 : 0);
-            
-            // Points pour l'équipe 2
-            $totalPoints += $scoreEquipe2 > $scoreEquipe1 ? 3 : ($scoreEquipe2 === $scoreEquipe1 ? 1 : 0);
-        }
-        return $totalPoints;
+        // $totalPoints = 0;
+        // foreach ($this->oppositionRepo->getOppositionByEquipe($this->id) as $opposition) {
+        //     $equipe1 = $opposition->getEquipe1();
+        //     $equipe2 = $opposition->getEquipe2();
+
+        //     $scoreEquipe1 = $opposition->getScoreEquipe1();
+        //     $scoreEquipe2 = $opposition->getScoreEquipe2();
+
+        //     if ($this->id === $equipe1->getId()) {
+        //         $totalPoints += $scoreEquipe1 > $scoreEquipe2 
+        //         ? 3 
+        //         : ($scoreEquipe1 === $scoreEquipe2 ? 1 : 0);
+        //     } else {
+        //         $totalPoints += $scoreEquipe1 < $scoreEquipe2 
+        //         ? 3 
+        //         : ($scoreEquipe1 === $scoreEquipe2 ? 1 : 0);
+        //     }
+        // }
+        return 0;
     }
     //-----------------------------------------------------------
 

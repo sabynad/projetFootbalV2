@@ -14,10 +14,10 @@ use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
 
 class DashboardController extends AbstractDashboardController
 {
+
     #[Route('/admin', name: 'admin.index')]
     public function index(): Response
     {
-    
         return $this->render('admin/dashboard.html.twig');
     }
 

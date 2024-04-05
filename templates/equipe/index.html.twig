@@ -25,8 +25,8 @@
                 <td>{{ equipe.nom }}</td>
                 <td>{{ equipe.categorie }}</td>
                 <td>{{ equipe.championnat }}</td>
-                <td>{{ equipe.totalPoints ~ ' Points' }}</td>
-                <td>{{ equipe.getNombreMatchEquipe }}</td>
+                <td>{{ scores[equipe.id] ~ ' Points' }}</td>
+                <td>{{ matches[equipe.id] }}</td>
                 <td>
                     <img style="width: 80px; " class="rounded-circle" src="{{ vich_uploader_asset(equipe, 'imageFile') }}"/>
                 </td>

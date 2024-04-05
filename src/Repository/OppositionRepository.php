@@ -21,6 +21,17 @@ class OppositionRepository extends ServiceEntityRepository
         parent::__construct($registry, Opposition::class);
     }
 
+    public function getOppositionByEquipe (int $equipeId): array
+    {
+        return $this->createQueryBuilder('o')
+                ->orWhere('o.equipe1 = :eq1')
+                ->setParameter('eq1', $equipeId)
+                ->orWhere('o.equipe2 = :eq2')
+                ->setParameter('eq2', $equipeId)
+                ->getQuery()
+                ->getResult();
+    }
+
     //    /**
     //     * @return Opposition[] Returns an array of Opposition objects
     //     */
