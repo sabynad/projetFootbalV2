@@ -21,6 +21,8 @@ class OppositionRepository extends ServiceEntityRepository
         parent::__construct($registry, Opposition::class);
     }
 
+
+    // requete qui recupère dans la base de donnée toutes les oppositions de chaque equipe que ce soit en tant que equipe 1(match aller) et equipe 2(match retour)
     public function getOppositionByEquipe (int $equipeId): array
     {
         return $this->createQueryBuilder('o')

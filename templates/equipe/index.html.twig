@@ -14,6 +14,9 @@
                 <th>Championnat</th>
                 <th>Total_point</th>
                 <th>nbr match joue</th>
+                <th>nbr match gagne</th> 
+                <th>nbr match nul</th>
+                <th>nbr match perdu</th> 
                 <th>Logo</th>
                 <th>actions</th>
             </tr>
@@ -27,6 +30,10 @@
                 <td>{{ equipe.championnat }}</td>
                 <td>{{ scores[equipe.id] ~ ' Points' }}</td>
                 <td>{{ matches[equipe.id] }}</td>
+                <td>{{ matchesGagne[equipe.id] }}</td>
+                <td>{{ matchesNul[equipe.id] }}</td>
+                <td>{{ matchesPerdu[equipe.id] }}</td>
+
                 <td>
                     <img style="width: 80px; " class="rounded-circle" src="{{ vich_uploader_asset(equipe, 'imageFile') }}"/>
                 </td>

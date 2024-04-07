@@ -22,58 +22,81 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
             $this->repo = $repo;
         }
         
-        #[Route('/', name: 'app_equipe_index', methods: ['GET'])]
-        public function index(EquipeRepository $equipeRepository): Response
-        {
-            $equipes =  $equipeRepository->findAll();
-            $scores = [];
-            $matches = [];
 
-            function getEquipeScore (int $equipeId, OppositionRepository $repo, array &$matches): int
-            {
-                $totalPoints = 0;
-                $matches[$equipeId] = 0;
-                foreach ($repo->getOppositionByEquipe($equipeId) as $opposition) {
-                    $matches[$equipeId] = $matches[$equipeId] + 1;
-                    $equipe1 = $opposition->getEquipe1();
-        
-                    $scoreEquipe1 = $opposition->getScoreEquipe1();
-                    $scoreEquipe2 = $opposition->getScoreEquipe2();
-        
-                    if ($equipeId === $equipe1->getId()) {
-                        if ($scoreEquipe1 > $scoreEquipe2 ) {
-                            $totalPoints += 3;
-                            // plus ajouter au tableau gagné que tu vas créer
-                        } else {
-                            if ($scoreEquipe1 === $scoreEquipe2) {
-                                $totalPoints++;
-                                // plus ajouter au tableau match nulle que tu vas créer
-                            } else {
-                                // plus ajouter au tableau match perdu que tu vas créer
-                            }
-                        }
-                    } else {
-                        // + redéplier comme ci-dessus
-                        $totalPoints += $scoreEquipe1 < $scoreEquipe2 
-                        ? 3 
-                        : ($scoreEquipe1 === $scoreEquipe2 ? 1 : 0);
-                    }
-                }
-                return $totalPoints;
-            }
+   
+//----------------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------------
 
-            foreach($equipes as $equipe) {
-                $scores[$equipe->getId()] = getEquipeScore($equipe->getId(), $this->repo, $matches);
-            }
+    #[Route('/', name: 'app_equipe_index', methods: ['GET'])]
+    public function index(EquipeRepository $equipeRepository): Response
+    {
+        $equipes =  $equipeRepository->findAll();
+        // Tableau pour stocker les matchs gagnés
+        $scores = [];
+        $matches = [];
+        $matchesGagne = []; 
+        $matchesNul = []; 
+        $matchesPerdu = []; 
 
-            return $this->render('equipe/index.html.twig', [
-                'equipes' => $equipeRepository->findAll(),
-                'scores' => $scores,
-                'matches' => $matches,
-            ]);
+        // Initialiser les tableaux avec les ID des équipes
+        foreach ($equipes as $equipe) {
+            $equipeId = $equipe->getId();
+            $matches[$equipeId] = 0;
+            $matchesGagne[$equipeId] = 0;
+            $matchesNul[$equipeId] = 0;
+            $matchesPerdu[$equipeId] = 0;
         }
 
+        // Fonction pour calculer le score de l'équipe et le nombre de matchs gagnés
+        function getEquipeScore(int $equipeId, OppositionRepository $repo, array &$matches, array &$matchesGagne, array &$matchesNul, array &$matchesPerdu): int
+        {
+            $totalPoints = 0;
 
+            foreach ($repo->getOppositionByEquipe($equipeId) as $opposition) {
+                $matches[$equipeId] = $matches[$equipeId] + 1;
+                $equipe1 = $opposition->getEquipe1();
+                $scoreEquipe1 = $opposition->getScoreEquipe1();
+                $scoreEquipe2 = $opposition->getScoreEquipe2();
+
+                if ($equipeId === $equipe1->getId()) {
+                    if ($scoreEquipe1 > $scoreEquipe2) {
+                        $totalPoints += 3;
+                        $matchesGagne[$equipeId]++;
+                    } elseif ($scoreEquipe1 === $scoreEquipe2) {
+                        $totalPoints++;
+                        $matchesNul[$equipeId]++;
+                        $matchesPerdu[$equipeId]++;
+                    }
+                } else {
+                    if ($scoreEquipe1 < $scoreEquipe2) {
+                        $totalPoints += 3;
+                        $matchesGagne[$equipeId]++;
+                    } elseif ($scoreEquipe1 === $scoreEquipe2) {
+                        $totalPoints++;
+                        $matchesNul[$equipeId]++;
+                        $matchesPerdu[$equipeId]++;
+                    }
+                }
+            }
+            return $totalPoints;
+        }
+
+        // Calculer le score de chaque équipe
+        foreach ($equipes as $equipe) {
+            $scores[$equipe->getId()] = getEquipeScore($equipe->getId(), $this->repo, $matches, $matchesGagne, $matchesNul, $matchesPerdu);
+        }
+
+        return $this->render('equipe/index.html.twig', [
+            'equipes' => $equipeRepository->findAll(),
+            'scores' => $scores,
+            'matches' => $matches,
+            'matchesGagne' => $matchesGagne,
+            'matchesNul' => $matchesNul,
+            'matchesPerdu' => $matchesPerdu,
+        ]);
+    }
+
+//-------------------------------------------------------------------------------------------------------------
 
 
 

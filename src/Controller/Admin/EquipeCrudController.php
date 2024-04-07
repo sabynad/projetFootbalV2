@@ -30,13 +30,13 @@ class EquipeCrudController extends AbstractCrudController
             TextField::new('nom'),
             TextField::new('categorie'),
             TextField::new('championnat'),
-            IntegerField::new('totalPoints', 'Total des Points')->onlyOnIndex(),
-            IntegerField::new('nbrMatchEquipe', 'Nombre de match')->onlyOnIndex(),
-            IntegerField::new('nbrMatchGagne', 'Nombre de match gagne')->onlyOnIndex(),
-            IntegerField::new('nbrMatchNul', 'Nombre de match nul')->onlyOnIndex(),
-            IntegerField::new('nbrMatchPerdu', 'Nombre de match perdu')->onlyOnIndex(),
-    
+            IntegerField::new('Scores', 'Total Points')->onlyOnIndex(),
             
+            IntegerField::new('nbrMatchEquipe', 'Match joue')->onlyOnIndex(),
+            IntegerField::new('nbrMatchGagne', 'Match gagne')->onlyOnIndex(),
+            IntegerField::new('nbrMatchNul', 'Match nul')->onlyOnIndex(),
+            IntegerField::new('nbrMatchPerdu', 'Match perdu')->onlyOnIndex(),
+           
         ];
     }
     
