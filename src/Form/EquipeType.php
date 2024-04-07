@@ -15,9 +15,7 @@ class EquipeType extends AbstractType
         $builder
             ->add('nom')
             ->add('categorie')
-            ->add('championnat')
-            // ->add('total_point')
-            // ->add('logo')
+            ->add('championnat')           
             ->add('imageFile', VichImageType::class, [
                 'label' => 'Image logo',
                 'label_attr' => [

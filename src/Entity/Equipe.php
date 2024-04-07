@@ -32,10 +32,7 @@ class Equipe
     #[ORM\Column(length: 255)]
     private ?string $championnat = null;
 
-    #[ORM\Column(nullable: true)]
-    private ?int $total_point = null;
-
-
+    
 
     //vich upload
     #[Vich\UploadableField(mapping: 'logo_images', fileNameProperty: 'ImageName')]
@@ -103,18 +100,6 @@ class Equipe
         return $this;
     }
 
-    public function getTotalPoint(): ?int
-    {
-        return $this->total_point;
-    }
-
-    public function setTotalPoint(?int $total_point): static
-    {
-        $this->total_point = $total_point;
-
-        return $this;
-    }
-
     
 
     public function setImageFile(?File $imageFile = null): void
@@ -125,6 +110,8 @@ class Equipe
         //     $this->updatedAt = new \DataTimeImmutable();
         // }
     }
+
+    
     //vich upload---------
     public function getImageFile(): ?File
     {
@@ -139,6 +126,7 @@ class Equipe
         return $this->imageName;
     }
     //---------------------
+
 
     /**
      * @return Collection<int, Opposition>
@@ -231,48 +219,7 @@ class Equipe
     }
 
     
-    // total points sur l'ensemble des matchs
-    // public function getTotalPoints(): int
-    // {
-    //     $totalPoints = 0;
-    //     foreach ($this->oppositionRepo->getOppositionByEquipe($this->id) as $opposition) {
-    //         $equipe1 = $opposition->getEquipe1();
-    //         $equipe2 = $opposition->getEquipe2();
 
-    //         $scoreEquipe1 = $opposition->getScoreEquipe1();
-    //         $scoreEquipe2 = $opposition->getScoreEquipe2();
-
-    //         if ($this->id === $equipe1->getId()) {
-    //             $totalPoints += $scoreEquipe1 > $scoreEquipe2 
-    //             ? 3 
-    //             : ($scoreEquipe1 === $scoreEquipe2 ? 1 : 0);
-    //         } else {
-    //             $totalPoints += $scoreEquipe1 < $scoreEquipe2 
-    //             ? 3 
-    //             : ($scoreEquipe1 === $scoreEquipe2 ? 1 : 0);
-    //         }
-    //     }
-    //     return 0;
-    // }
-    //-----------------------------------------------------------
-
-
-    // total de match joué par equipe
-    // public function getNbrMatchEquipe(): int
-    // {
-    //     $count = 0;
-    //     foreach ($this->oppositions as $opposition) {
-    //         if ($opposition->getEquipe1() === $this || $opposition->getEquipe2() === $this) {
-    //             $count++;
-    //         }
-    //     }
-    //     return $count;
-
-    // }
-    // ----------------------------------------------------------------
-
-
- 
 
     //methode pour récupérer le total des matchs joués par équipe
     

@@ -103,7 +103,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
     #[Route('/new', name: 'app_equipe_new', methods: ['GET', 'POST'])]
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
-        $equipe = new Equipe($this->repo);
+        $equipe = new Equipe;
         $form = $this->createForm(EquipeType::class, $equipe);
         $form->handleRequest($request);
 
@@ -156,9 +156,5 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
         return $this->redirectToRoute('app_equipe_index', [], Response::HTTP_SEE_OTHER);
     }
-
-
-    
-
 
 }

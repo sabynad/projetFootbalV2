@@ -23,48 +23,7 @@ class EquipeRepository extends ServiceEntityRepository
 
     
 
-    // private $oppositionRepository;
-
-    // public function __construct(ManagerRegistry $registry, OppositionRepository $oppositionRepository)
-    // {
-    //     parent::__construct($registry, Equipe::class);
-    //     $this->oppositionRepository = $oppositionRepository;
-    // }
-
-    // public function getEquipeScore(int $equipeId): int
-    // {
-    //     $totalPoints = 0;
-    //     $matches = 0;
-        
-    //     // Récupérer les oppositions de l'équipe
-    //     $oppositions = $this->oppositionRepository->getOppositionByEquipe($equipeId);
-
-    //     // Parcourir les oppositions
-    //     foreach ($oppositions as $opposition) {
-    //         $matches++;
-    //         $equipe1 = $opposition->getEquipe1();
-    //         $scoreEquipe1 = $opposition->getScoreEquipe1();
-    //         $scoreEquipe2 = $opposition->getScoreEquipe2();
-
-    //         // Calculer les points en fonction des scores
-    //         if ($equipeId === $equipe1->getId()) {
-    //             if ($scoreEquipe1 > $scoreEquipe2) {
-    //                 $totalPoints += 3;
-    //             } elseif ($scoreEquipe1 === $scoreEquipe2) {
-    //                 $totalPoints++;
-    //             }
-    //         } else {
-    //             if ($scoreEquipe2 > $scoreEquipe1) {
-    //                 $totalPoints += 3;
-    //             } elseif ($scoreEquipe1 === $scoreEquipe2) {
-    //                 $totalPoints++;
-    //             }
-    //         }
-    //     }
-
-    //     return $totalPoints;
-    // }
-
+    
 
     //    /**
     //     * @return Equipe[] Returns an array of Equipe objects
