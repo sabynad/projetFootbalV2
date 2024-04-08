@@ -31,6 +31,7 @@ class EquipeCrudController extends AbstractCrudController
             TextField::new('categorie'),
             TextField::new('championnat'),
             IntegerField::new('scores', 'Total Points')->onlyOnIndex(),   
+            
             IntegerField::new('matches', 'Match joue')->onlyOnIndex(),
             IntegerField::new('matchesGagne', 'Match gagne')->onlyOnIndex(),
             IntegerField::new('matchesNul', 'Match nul')->onlyOnIndex(),
@@ -38,5 +39,7 @@ class EquipeCrudController extends AbstractCrudController
            
         ];
     }
-    
+
 }
+
+

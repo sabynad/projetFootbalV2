@@ -13,6 +13,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 
+
 #[ORM\Entity(repositoryClass: EquipeRepository::class)]
 
 #[Vich\Uploadable]
@@ -111,7 +112,7 @@ class Equipe
         // }
     }
 
-    
+
     //vich upload---------
     public function getImageFile(): ?File
     {
@@ -217,6 +218,8 @@ class Equipe
 
         return $this;
     }
+
+   
 
     
 
