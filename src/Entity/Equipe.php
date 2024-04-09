@@ -53,6 +53,9 @@ class Equipe
     #[ORM\OneToMany(targetEntity: Joueur::class, mappedBy: 'equipe')]
     private Collection $joueurs;
 
+    #[ORM\Column(nullable: true)]
+    private ?int $total_point = null;
+
     public function __construct()
     {
         $this->oppositions = new ArrayCollection();
@@ -221,8 +224,6 @@ class Equipe
 
    
 
-    
-
 
     //methode pour récupérer le total des matchs joués par équipe
     
@@ -241,6 +242,18 @@ class Equipe
     // }
 
      //-------------------------------------------------------------
+
+     public function getTotalPoint(): ?int
+     {
+         return $this->total_point;
+     }
+
+     public function setTotalPoint(?int $total_point): static
+     {
+         $this->total_point = $total_point;
+
+         return $this;
+     }
     
 
 }

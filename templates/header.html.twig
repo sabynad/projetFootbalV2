@@ -1,0 +1,46 @@
+
+    
+
+<header>
+    <div class="cont-header-top">
+            <img  src="/images/Kappa-Logo.png">     
+            <img  src="/images/Six-Fours-les-Plages.png">     
+    </div>
+    
+    <div class="cont-header-bottom">
+        <div class="burger-menu">
+            <ul class="lg-burger-links">
+                <li><a href="{{path('app_home_page')}}">Home</a></li>
+                <li><a href="{{path('app_equipe_index')}}">Equipes</a></li>
+                <li><a href="#">Evènements</a></li>
+                <li><a href="#">Media</a></li>
+                <li><a href="#">Boutique</a></li>
+                <li><a href="#">Club</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="cont-logo-burger">
+            <div class="burger-icon">
+                <div class="burger-rectangle"></div>
+            </div>
+            <img class="logo-sixfours" src="./images/logo/six-fours.png" alt="logo six fours">
+            <a href="{{path('app_login')}}"> <img class="logo-login" src="./images/login.png" alt="logo connexion"> </a>
+        </div>    
+    </div>
+    
+
+
+    <script>
+        console.log("sa marche");
+        // -------------------------------Menu Burger--------------------------------------------------
+        let burgerBtn = document.querySelector(".burger-icon");
+        let burgerMenu = document.querySelector(".burger-menu");
+        let burgerRectangle = document.querySelector(".burger-rectangle");
+
+        burgerBtn.addEventListener("click", () => {
+        burgerMenu.classList.toggle("open"), burgerRectangle.classList.toggle("open");
+        });
+    </script>
+
+</header>

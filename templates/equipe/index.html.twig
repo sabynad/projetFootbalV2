@@ -2,6 +2,7 @@
 
 {% block title %}Equipe index{% endblock %}
 
+
 {% block body %}
     <h1>Equipe index</h1>
 
@@ -29,6 +30,7 @@
                 <td>{{ equipe.categorie }}</td>
                 <td>{{ equipe.championnat }}</td>
                 <td>{{ scores[equipe.id] ~ ' Points' }}</td>
+              
                 <td>{{ matches[equipe.id] }}</td>
                 <td>{{ matchesGagne[equipe.id] }}</td>
                 <td>{{ matchesNul[equipe.id] }}</td>

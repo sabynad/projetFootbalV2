@@ -306,6 +306,9 @@
             "./config/routes/web_profiler.yaml"
         ]
     },
+    "symfonycasts/sass-bundle": {
+        "version": "v0.6.0"
+    },
     "twig/extra-bundle": {
         "version": "v3.8.0"
     },

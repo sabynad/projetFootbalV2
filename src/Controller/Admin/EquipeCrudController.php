@@ -22,6 +22,7 @@ class EquipeCrudController extends AbstractCrudController
 
     public function configureFields(string $pageName): iterable
     {
+        
         return [
             IdField::new('id')->hideOnForm(),
             ImageField::new('image_name')->setLabel('Logo')->setBasePath('/images/logo')
@@ -30,7 +31,7 @@ class EquipeCrudController extends AbstractCrudController
             TextField::new('nom'),
             TextField::new('categorie'),
             TextField::new('championnat'),
-            IntegerField::new('scores', 'Total Points')->onlyOnIndex(),   
+            IntegerField::new('scores', 'Total Point')->onlyOnIndex(),   
             
             IntegerField::new('matches', 'Match joue')->onlyOnIndex(),
             IntegerField::new('matchesGagne', 'Match gagne')->onlyOnIndex(),

@@ -1,0 +1,22 @@
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+background: $main-bacground;
+
+}
+  
+td {
+
+border: 1px solid $light-grey;
+border-collapse: collapse;
+}
+
+.main-container {
+    width: 100vw;
+    
+}
