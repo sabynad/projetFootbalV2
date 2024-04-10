@@ -22,7 +22,7 @@ class OppositionCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            IdField::new('id'),
+            IntegerField::new('id'),
             DateField::new('date'),
             ImageField::new('equipe1.image_name', 'Logo Equipe 1')->setBasePath('/images/logo')->onlyOnIndex(),
             TextField::new('equipe1.nom'),

@@ -1,0 +1,60 @@
+
+.general-form{
+    width: 70%;
+    margin: auto;
+    // background-color: white;
+    margin-top: 15%;
+    inline-size: 20rem;
+}
+
+.titre-login{
+    
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    img{
+        width: 40%;
+    }
+}
+
+.champ-form{
+    
+    display: flex;
+    flex-direction: column;
+    border: none;
+    gap: 3rem;  
+    margin-bottom: 1rem;
+    
+    label {
+        display: none;
+    }
+    input[type="email"], input[type="password"]  {
+        border: none;
+        padding: 10px;
+        border-bottom: 1px solid rgba(143, 148, 152, 0.5);
+        background: white;
+    }
+    
+}
+
+.bottom-form{
+
+    padding: 1rem;
+    text-align: center;
+    .main-btn{
+        background-color: $bouton;
+        color: $titre-bouton; 
+        border-radius: 1rem;
+        padding: 0.8rem;
+        margin-top: 2rem;
+    }
+}
+
+.register-acces{
+    margin-top: 2rem;
+    font-size: 0.5rem;
+    color: #D74B2E;
+    a:visited {
+        color: #D74B2E;
+    }
+}

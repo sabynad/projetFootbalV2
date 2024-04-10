@@ -20,7 +20,7 @@ header {
   }
 }
 
-.bottom-cont-logo{
+.cont-header-bottom{
 
   display: flex;
   justify-content: space-between;
@@ -30,18 +30,16 @@ header {
     width: 25%;
     height: auto;
   }
- a {
-    display: contents;
-    width: 10%;
- img {
-  height: 35px;
-  width: 40px;
-    margin-right: 15%;
- }
- }
+  a {
+      display: contents;
+      width: 10%;
+  img {
+    height: 35px;
+    width: 40px;
+      margin-right: 15%;
+  }
+  }
 }
-
-
 
 .cont-logo-burger{
   display: flex;
@@ -190,9 +188,6 @@ header {
 
 
 
+@media screen and (min-width: 768px) {
 
-
-
-// @media screen and (min-width: 768px) {
-
-// }
+}

@@ -27,7 +27,7 @@ class JoueurCrudController extends AbstractCrudController
             // TextField::new('date_naissance'),
             DateField::new('date_naissance', 'Date de Naissance'),
             IntegerField::new('numero'),
-            IntegerField::new('poste'),
+            TextField::new('poste'),
             IntegerField::new('carton_jaune'),
             IntegerField::new('carton_rouge'),
             IntegerField::new('match_joue'),
