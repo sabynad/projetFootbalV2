@@ -3,3 +3,12 @@
 img{
     width: 100%;
 }
+
+.btn-index{
+    width:5rem;
+    background-color: $bouton;
+    color: $titre-bouton; 
+    border-radius: 1rem;
+    padding: 0.2rem;
+    margin-top: 1rem;
+}
