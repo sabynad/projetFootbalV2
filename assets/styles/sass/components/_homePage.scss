@@ -1,4 +1,5 @@
 
+
 // actualité carrousselle---------------------------------------------------------------------
 .cont-actualite-carroussel {
     position: relative;
@@ -9,7 +10,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    
     .overlay {
         // border: 3px solid green;
         padding-top: 150px;
@@ -17,13 +17,11 @@
         width: 100%;
         margin-left: 2rem; // marge avec le h1 et P et la bordure gauche
         justify-content: flex-end;
-
         .titre-dans-image{    
             width: 100%;
             height: 100%;
             font-size: $size-h1;
             color: $titre-img; 
-            
             .para-dans-image p {
                 font-size: $size-paragraphe; // Utilisation d'une variable pour la taille du paragraphe
                 margin: 10px 0; // Ajoute une marge en haut et en bas pour l'espacement
@@ -48,36 +46,108 @@
 //--------------------------------------------------------------------------------------------------
 
 //contenaire affichage match et classement--------------------------------------------------------
-
 .cont-match-classement{
     position: absolute;
-    border: 1px solide red;
-    background-color: rgb(131, 125, 125);
+    background-color: rgb(214, 207, 207);
     // background-color: white;
     width: 90%;
-    height: 20rem;
-    top: 26rem; // distance entre le bord supérieur de l'élément et le bord supérieur de son conteneur parent
+    height: 25%;
+    top: 25rem; // distance entre le bord supérieur de l'élément et le bord supérieur de son conteneur parent
     left: 50%;
     transform: translateX(-50%); //centrer horizontalement l'élément par rapport à son conteneur parent 
 }
-//-------------------------------------------------------------------------------------------------
-   
+
+
 // bloc actualité----------------------------------------------------------------------------------
-.cont-actualite{
+.h1-actualite{
+    margin-top: 13rem;
+    font-size: $size-h1;
+    margin-left: 1.2rem;
+}
+
+.cont-actualite1{
+    position:relative;
+    display: flex;
     width: 90%;
-    height: 10%;
-    border: 1px solid green;
-    // background-position: center;
-    // background-image: url('/images/actualite_2.jpg');
-    // background-size: cover; // pour que l'image prenne tout l'espace
-    margin-top: 18rem;
-    // margin: auto;
-    .img-section-actu{
-        width: 100%;
-        height: 100%;
-        margin: auto;
+    height: 15vh;
+    border: 2px solid green;
+    background-image: url('/images/actualite_2.jpg');
+    background-size: cover; // pour que l'image prenne tout l'espace
+    background-position: center;
+    margin: 0.5rem auto;
+    .img-section-actualite1{
+        width: 100%;  
+    }
+}
+
+.cont-titre-actualite1{
+    display: flex;
+    align-items: center;
+    background-color: $cont-titre-actualite;
+    position: absolute;
+    width: 80%;
+    height: 5%;
+    top: 48rem;
+    left:50%; //Place le bord gauche de l'élément à 50% de la largeur de son conteneur parent
+    transform: translateX(-50%); //Déplace l'élément horizontalement de -50% de sa propre largeur vers la gauche, centré par rapport à son propre point de départ 
+    h2{
+        font-size: $size-h2;
+        padding: 1rem;
+    }
+}
+
+.cont-actualite2 {
+    @extend .cont-actualite1;
+    background-image: url('/images/actualite_3.jpg');
+    top: 3rem;
+}
+
+.cont-titre-actualite2 {
+    @extend .cont-titre-actualite1;
+    top: 59rem;
+}
+
+.cont-actualite3 {
+    @extend .cont-actualite1;
+    background-image: url('/images/actualite_4.jpg');
+    top: 6rem;
+}
+
+.cont-titre-actualite3 {
+    @extend .cont-titre-actualite1;
+    top: 70rem;
+}
+
+// Bloc evenement-----------------------------------------------------------------------------------
+.cont-evenement{
+    background-color: black;
+    width: 100%;
+    .evenement1 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
     
-    
+    .img-event-1{
+        img{
+            width: 100%;
+            
+        }
+    }
 
+    .h1-actualite{
+        color: $titre-event;
+        
+    }
+
+    .fond-h2{
+        background-color: $background-titre-evenement;
+        width: 100%;
+        margin: 0;
+        h2{
+        color: $titre-event;
+        size: $size-paragraphe;
+        margin: 1rem;
+        }
+    }  
 }
