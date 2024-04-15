@@ -43,8 +43,8 @@ header {
       margin-right: 10%;
     }
     .logo-signin{
-      height: 50px;
-      width: 50px;
+      height: 35px;
+      width: 35px;
       margin-right: 10%;
     }
   }
@@ -71,6 +71,7 @@ header {
 .burger-menu.open {
   transform: translateX(0%);
   width: 100%;
+  z-index: 9;
 }
 
 .lg-burger-links {

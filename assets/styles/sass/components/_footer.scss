@@ -1,0 +1,44 @@
+
+.cont-footer{
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    position: relative;
+    .logo-club{
+        img{
+            position: absolute;
+            left: 50%;
+            top:-35%;
+            width: 50%;
+            transform: translateX(-50%);
+        }   
+    }
+    .titre-reseau{
+        h1{
+            color: $titre-img; 
+            font-size: 1.6rem;
+            text-align: center;
+        }
+        .icon-reseau-sociaux{
+            width:60%;
+            display: flex;
+            justify-content: center;
+            color: white;
+            gap: 1.2rem; // espacement entre les icons
+            border-bottom: 1px solid #D74B2E;
+            margin: 1.5rem auto 2rem; //centrer horizontalement avec des marges automatiques et marge en haut de 1.5rem
+            
+        }
+    }
+    .copyright{
+        color: $titre-img;
+        font-size: 0.6rem;
+        margin: 5rem 0 1rem 1rem;
+        .contact{
+            margin-top: 1rem;
+            margin-bottom: 1.5rem;
+        }
+    }
+}
+
+
