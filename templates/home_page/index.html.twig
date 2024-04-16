@@ -25,7 +25,13 @@
         {#-----------------------------------------------------------------------------  #}
         <div class="cont-match-classement">
             <div class="box-match-classement">
-                <h1> test contenaire </h1>  
+                <h1> Matchs </h1>
+                {# <p>{{ opposition.equipe1.nom }} vs {{ opposition.equipe2.nom }}</p>  #}
+                {# <p>{{ opposition.scoreEquipe1 }} - {{ opposition.scoreEquipe2 }}</p>  #}
+                {{ dump(opposition) }}
+                {# je dois écrire une requete pour aller récupérer la dernière opposition de mon equipe #}
+
+                <h1> Classement</h1>  
             </div>
         </div>
 
