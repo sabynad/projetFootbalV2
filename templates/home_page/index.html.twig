@@ -26,12 +26,18 @@
         <div class="cont-match-classement">
             <div class="box-match-classement">
                 <h1> Matchs </h1>
-                {# {{ dump(lastMatchSixFours) }} #}
                 {% if lastMatchSixFours %}
-                    {# <p>{{ lastMatchSixFours.equipe1.image_name }}   #}
-                    <p>{{ lastMatchSixFours.date |date('d-m-Y') }}</p>
-                    <p>{{ lastMatchSixFours.equipe1.nom }} vs {{ lastMatchSixFours.equipe2.nom }}</p>
-                    <p>{{ lastMatchSixFours.scoreEquipe1 }} - {{ lastMatchSixFours.scoreEquipe2 }}</p>
+                    <div class="date-match">
+                        <p>{{ lastMatchSixFours.date |date('d-m-Y') }}</p>
+                    </div>
+                    <div class="logo-match">
+                        <img src="{{ '/images/logo/' ~ lastMatchSixFours.equipe1.imageName }}">
+                        <img src="{{ '/images/logo/' ~ lastMatchSixFours.equipe2.imageName }}">
+                    </div>
+                    <div class="equipe-score-match">
+                        <p>{{ lastMatchSixFours.equipe1.nom }} <span class="versus">vs</span> {{ lastMatchSixFours.equipe2.nom }}</p>
+                        <p>{{ lastMatchSixFours.scoreEquipe1 }} - {{ lastMatchSixFours.scoreEquipe2 }}</p>
+                    </div>
                 {% else %}
                     <p>Aucun match trouvé.</p>
                 {% endif %}
