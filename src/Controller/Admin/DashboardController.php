@@ -28,6 +28,8 @@ class DashboardController extends AbstractDashboardController
             ->renderContentMaximized();
     }
 
+   
+
     public function configureMenuItems(): iterable
     {   
         

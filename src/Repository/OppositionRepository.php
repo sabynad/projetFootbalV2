@@ -34,6 +34,35 @@ class OppositionRepository extends ServiceEntityRepository
                 ->getResult();
     }
 
+    // Requête pour récupérer et afficher le dernier match de l'équipe de six fours
+
+    // Ne fonctionne pas (envoi un match au hasard)
+
+    // public function lastMatchSixFours(): ?Opposition
+    // {
+    //     return $this->createQueryBuilder('o')
+    //         ->join('o.equipe1', 'e1')
+    //         ->join('o.equipe2', 'e2')
+    //         ->andWhere('e1.nom = :teamName OR e2.nom = :teamName')
+    //         ->setParameter('teamName', 'Football Club Six-Fours') 
+    //         ->orderBy('o.date', 'DESC')
+    //         ->setMaxResults(1)
+    //         ->getQuery()
+    //         ->getOneOrNullResult();
+    // }
+    public function lastMatchSixFours(): ?Opposition
+    {
+        return $this->createQueryBuilder('o')
+            ->join('o.equipe1', 'e1')
+            ->join('o.equipe2', 'e2')
+            ->andWhere('e1.nom = :teamName OR e2.nom = :teamName')
+            ->setParameter('teamName', 'Football Club Six-Fours') 
+            ->orderBy('o.date', 'DESC')
+            ->setMaxResults(1)
+            ->getQuery()
+            ->getOneOrNullResult();
+    }
+
     //    /**
     //     * @return Opposition[] Returns an array of Opposition objects
     //     */
