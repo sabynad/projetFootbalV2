@@ -1,7 +1,7 @@
   
 .cont-main {
     background-color: $main-bacground;
-    border: 2px solid red;
+    // border: 2px solid red;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -13,7 +13,7 @@
 .cont-articles {
     // border: 3px solid red;
     width: 100%;
-    height: 20rem;
+    height: 25rem;
     padding-bottom: 12%;
     background-image: url('/images/actualite_1.jpg');
     background-size: cover; // pour que l'image prenne tout l'espace
@@ -54,7 +54,7 @@
     font-size: $size-h1;
     // border: 3px solid green;
     .box-match-classement{
-        border: 3px solid blue;
+        // border: 3px solid blue;
         text-align: center;
         background-color: rgb(255, 255, 255);
         width: 90%;
@@ -130,7 +130,16 @@
             left: 5%;
             width: 90%;      
         }
+
+
     }
+    .box-actualite4 {
+        display: none;
+    }
+    .box-actualite5{
+        display: none;
+    }
+
     .img-section-actualite1{
         background-image: url('/images/actualite_2.jpg');
     }
@@ -173,8 +182,15 @@
             img{
                 width: 90%;  
             }
-        }
+        } 
     }
+    .box-evenement4{
+            display: none;
+        }
+        .box-evenement5{
+            display: none; 
+        }
+    
     .box-title-evenement{
         width: 90%;
         margin:  0 0 1rem;
@@ -295,11 +311,6 @@
     }
 }
 
-
-
-// ---------------------------------------------media queries----------------------------------
-
-@import url('sass/responsiveHomePage.scss');
 
 
 

@@ -1,18 +1,28 @@
 header{
+    // border: 2px solid violet;
+    // display: flex;
+    // flex-direction: column;
+    
+    .cont-header{
+        padding:  0 280px;
+        box-shadow: 20px;
+    }
     .container-top {
         padding: 2rem;
         justify-content: flex-end;
         align-items: center;
+        // margin: 0 auto;
         .social {
             width: 250px;
             margin-right: 1rem;
+        
             a {
-                font-size: 2.3rem;
+                font-size: 1.5rem;
             }
         }
         .partners {
             img {
-                height: 100px;
+                height: 60px;
                 margin: 0 1rem;
             }
         }
@@ -22,7 +32,7 @@ header{
             position: relative;
             display: block;
             width: 90%;
-            margin: auto;
+            margin: 0 auto;
         }
         .burger-menu{
             margin-right: 0;
@@ -44,7 +54,7 @@ header{
                         color: $black;
                         text-transform: uppercase;
                         font-weight: bold;
-                        font-size: 1.6rem;
+                        font-size: 1rem;
                     }
                 }
             }
@@ -56,7 +66,7 @@ header{
             transform: translateY(-50%);
         }
         .logo {
-            width: 250px;
+            width: 150px;
             transform: translateY(33%);
         }
     }

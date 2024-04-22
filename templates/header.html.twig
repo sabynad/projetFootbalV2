@@ -1,59 +1,61 @@
 
 <header>
-    <div class="container-top">
-        <div class="social">
-            <a target="_blank" href="https://www.facebook.com/p/Six-fours-le-brusc-fc-100069607824620/" ><i class="fa-brands fa-facebook"></i></a>
-            <a target="_blank" href="https://www.instagram.com/sixfoursfc83/"><i class="fa-brands fa-instagram"></i></a>
-            <a target="_blank" href="https://twitter.com/6fourslesplages?lang=fr"><i class="fa-brands fa-x-twitter"></i></a>
-            <a target="_blank" href="https://www.youtube.com/@toulonfootball"><i class="fa-brands fa-youtube"></i></a>   
-        </div>
-        <div class="partners">
-            <img alt="Kappa" src="/images/Kappa-Logo.png">     
-            <img alt="Six-Fours-les-Plages" src="/images/Six-Fours-les-Plages.png">
-        </div>
-    </div>
-    
-    <div class="container-bottom">
-    
-        <div class="wrapper">
-            <div class="burger-menu">
-                <span class="burger-menu-button"><span></span></span>
-                <div class="burger-menu-content">
-                    <span class="burger-menu-close">Fermer</span>
-                    <ul class="lg-burger-links">
-                        <li><a href="{{path('app_home_page')}}">Home</a></li>
-                        <li><a href="{{path('app_equipe_index')}}">Equipes</a></li>
-                        <li><a href="#">Evènements</a></li>
-                        <li><a href="#">Media</a></li>
-                        <li><a href="#">Boutique</a></li>
-                        <li><a href="#">Club</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-                </div>
+    <div class="cont-header">
+        <div class="container-top">
+            <div class="social">
+                <a target="_blank" href="https://www.facebook.com/p/Six-fours-le-brusc-fc-100069607824620/" ><i class="fa-brands fa-facebook"></i></a>
+                <a target="_blank" href="https://www.instagram.com/sixfoursfc83/"><i class="fa-brands fa-instagram"></i></a>
+                <a target="_blank" href="https://twitter.com/6fourslesplages?lang=fr"><i class="fa-brands fa-x-twitter"></i></a>
+                <a target="_blank" href="https://www.youtube.com/@toulonfootball"><i class="fa-brands fa-youtube"></i></a>   
             </div>
+            <div class="partners">
+                <img alt="Kappa" src="/images/Kappa-Logo.png">     
+                <img alt="Six-Fours-les-Plages" src="/images/Six-Fours-les-Plages.png">
+            </div>
+        </div>
         
-            <div class="subcontainer">
-                {% set currentPath = path(app.request.attributes.get('_route'),
-                       app.request.attributes.get('_route_params')) %}
-
-                {% if currentPath == path('app_home_page')%}<h1>{% endif %}
-                <a class="logo" href="{{path('app_home_page')}}"> 
-                    <img src="/images/logo/six-fours.png" alt="FC Six-Fours">
-                </a>
-                {% if currentPath == path('app_home_page')%}</h1>{% endif %}
-                {# condition pour afficher le logo connection et le logo qui change une fois connecter #}
-                <div class="login">
-                {% if app.user %}
-                    <a href="{{path('admin.index')}}"><i class="fa-solid fa-circle-user"></i></a>
-                {% else %}
-                    <a href="{{ path('app_login') }}">
-                        <i class="fa-solid fa-right-to-bracket"></i>
-                    </a>
-                {% endif %}
+        <div class="container-bottom">
+            <div class="wrapper">
+                <div class="burger-menu">
+                    <span class="burger-menu-button"><span></span></span>
+                    <div class="burger-menu-content">
+                        <span class="burger-menu-close">Fermer</span>
+                        <ul class="lg-burger-links">
+                            <li><a href="{{path('app_home_page')}}">Home</a></li>
+                            <li><a href="{{path('app_equipe_index')}}">Equipes</a></li>
+                            <li><a href="#">Evènements</a></li>
+                            <li><a href="#">Media</a></li>
+                            <li><a href="#">Boutique</a></li>
+                            <li><a href="#">Club</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
                 </div>
+
+            
+                <div class="subcontainer">
+                    {% set currentPath = path(app.request.attributes.get('_route'),
+                        app.request.attributes.get('_route_params')) %}
+
+                    {% if currentPath == path('app_home_page')%}<h1>{% endif %}
+                    <a class="logo" href="{{path('app_home_page')}}"> 
+                        <img src="/images/logo/six-fours.png" alt="FC Six-Fours">
+                    </a>
+                    {% if currentPath == path('app_home_page')%}</h1>{% endif %}
+                    {# condition pour afficher le logo connection et le logo qui change une fois connecter #}
+                    <div class="login">
+                    {% if app.user %}
+                        <a href="{{path('admin.index')}}"><i class="fa-solid fa-circle-user"></i></a>
+                    {% else %}
+                        <a href="{{ path('app_login') }}">
+                            <i class="fa-solid fa-right-to-bracket"></i>
+                        </a>
+                    {% endif %}
+                    </div>
+                </div> 
             </div> 
         </div> 
-    </div> 
+    </div>
 </header> 
 
 

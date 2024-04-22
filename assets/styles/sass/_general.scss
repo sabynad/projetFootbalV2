@@ -2,10 +2,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-*
-{
-	border:2px solid green;
-}
+
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -21,6 +18,7 @@ figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
+	
 	padding: 0;
 	border: 0;
 	font-size: 30px ;
@@ -60,7 +58,7 @@ body {
 	font-family: $font-family;
 	font-size: 60px;
 	// line-height: 1.3em;
-	border: 3px solid green;
+	// border: 3px solid green;
 }
 
 h1 {

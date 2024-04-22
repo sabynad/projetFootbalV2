@@ -1,19 +1,20 @@
   
 .cont-main {
     background-color: $main-bacground;
-    border: 2px solid red;
+    // border: 2px solid red;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    padding: 0 300px;
 }
 
 // actualité carrousselle---------------------------------------------------------------------
 .cont-articles {
     // border: 3px solid red;
     width: 100%;
-    height: 60rem;
+    height: 35rem;
     padding-bottom: 12%;
     background-image: url('/images/actualite_1.jpg');
     background-size: cover; // pour que l'image prenne tout l'espace
@@ -51,7 +52,7 @@
 //contenaire affichage match et classement--------------------------------------------------------
 .cont-match-classement{
     width: 100%;
-    border: 2px solid red;
+    // border: 2px solid red;
     height: 21rem;
     padding: 5%;
     margin-bottom: 22%;
@@ -99,8 +100,7 @@
         .stat-match{
             font-size: 0.5rem;
             
-        }
-        
+        }      
     }  
 }
 
@@ -115,6 +115,13 @@
     margin: 30px auto 30px;
     .actualite-title {
         align-self: flex-start;
+    }
+    
+    .box-actualite4 {
+        display: block;
+    }
+    .box-actualite5{
+        display: block;
     }
 
     .box-actualite {
@@ -147,6 +154,14 @@
     }
     .img-section-actualite3{
         background-image: url('/images/actualite_4.jpg');
+    }
+
+    .img-section-actualite4{
+        background-image: url('/images/actualite_5.jpg');
+    }
+
+    .img-section-actualite5{
+        background-image: url('/images/actualite_6.jpg');
     }
 }
 
@@ -182,6 +197,12 @@
                 width: 90%;  
             }
         }
+    }
+    .box-evenement4 {
+        display: block;
+    }
+    .box-evenement5{
+        display: block;
     }
     .box-title-evenement{
         width: 90%;
@@ -302,12 +323,6 @@
         max-height: 45px;
     }
 }
-
-
-
-// ---------------------------------------------media queries----------------------------------
-
-@import url('sass/responsiveHomePage.scss');
 
 
 
