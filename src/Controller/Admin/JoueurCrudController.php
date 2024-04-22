@@ -21,10 +21,11 @@ class JoueurCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            IdField::new('id'),
+            IdField::new('id')
+                ->hideOnForm(),
+    
             TextField::new('nom'),
             TextField::new('prenom'),
-            // TextField::new('date_naissance'),
             DateField::new('date_naissance', 'Date de Naissance'),
             IntegerField::new('numero'),
             TextField::new('poste'),

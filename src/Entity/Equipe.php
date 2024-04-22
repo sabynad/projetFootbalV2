@@ -247,18 +247,6 @@ class Equipe
     // }
 
      //-------------------------------------------------------------
-
-     public function getTotalPoint(): ?int
-     {
-         return $this->total_point;
-     }
-
-     public function setTotalPoint(?int $total_point): static
-     {
-         $this->total_point = $total_point;
-
-         return $this;
-     }
     
 
 }

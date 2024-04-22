@@ -1,0 +1,44 @@
+footer {
+    background: $black;
+    color: $white;
+    text-align: center;
+    padding: 100px 0 1rem 0;
+    margin-top: 5px;
+    position: relative;
+    a {
+        color: $white;
+    }
+    .logo {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 120px;
+        top: -70px;
+    }
+
+    .icon-social{
+        padding: 10%;
+        a{
+            color: $red;
+            padding: 3%;
+            
+        }
+    }
+
+
+    .footer-top {
+        &:after {
+            content: "";
+            display: block;
+            margin: 3rem auto;
+            
+            border-bottom: 2px solid $red;
+            width: 40%;
+        } 
+    }
+
+    .footer-bottom {
+        font-size: .8rem;
+        padding: 0 0.5rem;
+    }
+}

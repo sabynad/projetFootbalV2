@@ -9,21 +9,23 @@
 
         {# BLOC ACTUALITE CARROUSSEL------------------------------------------------- #}
         {# -------------------------------------------------------------------------- #}
-        <section class="cont-articles">
-            <div class="item">
-                <div class="title-articles">
-                    <h2>Titre article rubrique actualité</h2>
-                    <p>Bref description de l'article</p>
-                    <button class="btn-index" href="#">Lire</button>
+        <div class="cont-actualite-carroussel">
+            <div class="overlay">
+                <div class="titre-dans-image">   
+                    <h1> Titre actualité image actualité 1 </h1> 
+                    <div class="para-dans-image">
+                         <p> paragraphe lié a l'actualité numéro 1 </p>
+                    </div>
+                    <button class="btn-index" type="submit">LIRE</button>
                 </div>
-            </div>
-        </section>
+            </div>  
+        </div>
 
         {# BLOC RECUPERATION DONNEES MATCHS ET CLASSEMENT------------------------------- #}
         {#-----------------------------------------------------------------------------  #}
-        <section class="cont-match-classement">
+        <div class="cont-match-classement">
             <div class="box-match-classement">
-                <h3> Matchs </h3>
+                <h1> Matchs </h1>
 
                 {# recupere le dernier match de l'equipe de six-fours avec date et logo des deux equipes #}
                 {% if lastMatchSixFours %}
@@ -46,38 +48,37 @@
 
                 {# récupère les 4 premier equipes du classement avec points match joue ect #}
                 <div class="classement-match">
-                    <p> Classement</p>
+                    <h1> Classement</h1>
                     {# {{ dump(scores) }} #}
                     {% for equipe in equipes|slice(0, 4) %}
-                        <div class="stat-match">
-                            <div class="nom-equipe">
-                                <p>{{ equipe.nom }}</p>
-                            </div>
-                            {# <p>{{ scores[equipe.id] }}</p>  #}
-                            {# <p>{{ matches[equipe.id] }}</p>
-                            <p>{{ matchesGagne[equipe.id] }}</p>
-                            <p>{{ matchesNul[equipe.id] }}</p>
-                            <p>{{ matchesPerdu[equipe.id] }}</p> #}       
-                        </div>   
-                    {% endfor %}
-                    <a href=""> Voir tous le classement </a>  
+                    <div class="stat-match">
+                        <div class="nom-equipe">
+                            <h2>{{ equipe.nom }}</h2>
+                        </div>
+                        {# <p>{{ scores[equipe.id] }}</p>  #}
+                        {# <p>{{ matches[equipe.id] }}</p>
+                        <p>{{ matchesGagne[equipe.id] }}</p>
+                        <p>{{ matchesNul[equipe.id] }}</p>
+                        <p>{{ matchesPerdu[equipe.id] }}</p> #}
+                    </div>
+                    {% endfor %}   
                 </div>           
                    
-                
+                <a href=""> Voir tous le classement </a>  
             </div>   
-        </section>
+        </div>
 
         {# BLOC ACTUALITE--------------------------------------------------------------- #}
         {#-----------------------------------------------------------------------------  #}
-        <section class="cont-actualite">
-            <h2 class="actualite-title"> ACTUALITE </h2>
+        <div class="cont-actualite">
+            <h2 class="actualite-titre"> ACTUALITE </h2>
 
             {# actu 1 #}
             <div class="box-actualite box-actualite1">
                 <div  class="img-section-actualite img-section-actualite1">
                 </div>                    
                 <div class="box-titre box-titre-actualite1">
-                    <h3> Titre de l'article actualité 1 </h3>  
+                    <h2> Titre de l'article actualité 1 </h2>  
                 </div>
             </div>
 
@@ -86,7 +87,7 @@
                 <div  class="img-section-actualite img-section-actualite2">
                 </div>
                 <div class="box-titre box-titre-actualite2">
-                    <h3> Titre de l'article actualité 2 </h3>  
+                    <h2> Titre de l'article actualité 2 </h2>  
                 </div>
             </div>
 
@@ -95,16 +96,16 @@
                 <div  class="img-section-actualite img-section-actualite3">
                 </div>
                 <div class="box-titre box-titre-actualite3">
-                    <h3> Titre de l'article actualité 3 </h3>  
+                    <h2> Titre de l'article actualité 3 </h2>  
                 </div>
             </div>
-        </section>
+        </div>
 
        
         {# BLOC EVENEMENT--------------------------------------------------------------- #}
         {# ----------------------------------------------------------------------------- #}
-        <section class="cont-evenement">
-            <div class="evenement-title">
+        <div class="cont-evenement">
+            <div class="evenement-titre">
                 <h2> EVENEMENT </h2>
             </div> 
 
@@ -113,8 +114,8 @@
                 <div class="img-event img-event-1">
                     <img src="/images/evenement_4.jpg" alt="victoire celebration">  
                 </div>
-                <div class="box-title-evenement">  
-                    <h3> Titre de l'évènement 1 </h3>  
+                <div class="box-titre-evenement">  
+                    <h2> Titre de l'évènement 1 </h2>  
                 </div>   
             </div>
 
@@ -123,8 +124,8 @@
                 <div class="img-event img-event-2">
                     <img src="/images/evenement_1.jpg" alt="stade avec joueurs">  
                 </div>
-                <div class="box-title-evenement">
-                     <h3> Titre de l'évènement 2 </h3>  
+                <div class="box-titre-evenement">
+                     <h2> Titre de l'évènement 2 </h2>  
                 </div>   
             </div>
 
@@ -133,15 +134,15 @@
                 <div class="img-event img-event-3">
                     <img src="/images/evenement_2.jpg" alt="joueurs à l'entrainement">  
                 </div>
-                <div class="box-title-evenement">
-                     <h3> Titre de l'évènement 3 </h3>  
+                <div class="box-titre-evenement">
+                     <h2> Titre de l'évènement 3 </h2>  
                 </div> 
             </div>
-        </section>
+        </div>
             
         {# BLOC BOUTIQUE---------------------------------------------------------------- #}
         {# ------------------------------------------------------------------------------#}
-        <section class="cont-shop">
+        <div class="cont-shop">
              <div class="shop-titre">
                 <h2> BOUTIQUE </h2>
             </div> 
@@ -181,8 +182,8 @@
         {# ----------------------------------------------------------------------------- #}
         <div class="cont-equipe1">
             <div class="overley-joueur">
-                <div class="title-image">
-                      <h2> EQUIPE PREMIERE </h2> 
+                <div class="titre-image">
+                      <h1> EQUIPE PREMIERE </h1> 
                     <div class="para-image">
                          <p> COMPOSITION </p>
                     </div>
@@ -206,7 +207,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 </main>
 
 {% endblock %}

@@ -1,10 +1,17 @@
 
 @import "./sass/variables";
 @import "./sass/general";
-@import "./sass/components/header";
-@import "./sass/components/homePage";
-@import "./sass/components/login";
-@import "./sass/components/register";
-@import "./sass/components/footer";
 
+
+
+
+@import "./sass/small/all.scss";
+
+@media (min-width: 768px) {
+    @import "./sass/medium/all.scss";
+}
+
+@media (min-width: 1200px) {
+    @import "./sass/large/all.scss";
+}
 

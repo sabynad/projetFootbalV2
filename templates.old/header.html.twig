@@ -1,0 +1,68 @@
+
+<header>
+    <div class="cont-header-top">
+        <div class="icon-reseau-sociaux">
+            <a target="_blank" href="https://www.facebook.com/p/Six-fours-le-brusc-fc-100069607824620/" ><i class="fa-brands fa-facebook"></i></a>
+            <a target="_blank" href="https://www.instagram.com/sixfoursfc83/"><i class="fa-brands fa-instagram"></i></a>
+            <a target="_blank" href="https://twitter.com/6fourslesplages?lang=fr"><i class="fa-brands fa-x-twitter"></i></a>
+            <a target="_blank" href="https://www.youtube.com/@toulonfootball"><i class="fa-brands fa-youtube"></i></a>   
+        </div>     
+        <img  src="/images/Kappa-Logo.png">     
+        <img  src="/images/Six-Fours-les-Plages.png">
+    </div>
+    
+    <div class="cont-header-bottom">
+        <div class="burger-menu">
+            <span class="burger-menu-button">Menu</span>
+            <ul class="lg-burger-links">
+                <li><a href="{{path('app_home_page')}}">Home</a></li>
+                <li><a href="{{path('app_equipe_index')}}">Equipes</a></li>
+                <li><a href="#">Evènements</a></li>
+                <li><a href="#">Media</a></li>
+                <li><a href="#">Boutique</a></li>
+                <li><a href="#">Club</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        
+
+        <div class="cont-logo-burger">
+            <div class="burger-icon">
+                <div class="burger-rectangle"></div>
+            </div>
+            <div class="cont-header-bottom">
+                <img class="logo-sixfours" src="/images/logo/six-fours.png" alt="logo six fours">
+                {# condition pour afficher le logo connection et le logo qui change une fois connecter #}
+                {% if app.user %}
+                    <a href="{{path('admin.index')}}"> <img class="logo-connecter" src="/images/login.png" alt="logo connecter"> </a>
+                {% else %}
+                    <a href="{{ path('app_login') }}">
+                        <img class="logo-signin" src="/images/sign-in.png" alt="logo Sign In ">
+                    </a>
+                {% endif %}
+            </div> 
+        </div>    
+    </div> 
+    
+
+
+    <script>
+        // console.log("sa marche");
+        // -------------------------------Menu Burger--------------------------------------------------
+        let burgerBtn = document.querySelector(".burger-icon");
+        let burgerMenu = document.querySelector(".burger-menu");
+        let burgerRectangle = document.querySelector(".burger-rectangle");
+        
+
+        burgerBtn.addEventListener("click", () => {
+        burgerMenu.classList.toggle("open"), burgerRectangle.classList.toggle("open");
+        });
+    </script>
+
+</header> 
+
+
+
+
+
+ 

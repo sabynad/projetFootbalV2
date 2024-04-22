@@ -1,0 +1,24 @@
+header{
+    .container-top {
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem;
+        .social {
+            display: flex;
+            justify-content: space-between;
+            width: 200px;
+            a {
+                color: $red;
+                font-size: 1.8rem;
+            }
+        }
+    }
+    .container-bottom {
+        .burger-menu{
+            margin-right: 2rem;
+        }
+        .logo {
+            width: 80px;
+        }
+    }
+}

@@ -11,9 +11,14 @@
         font-size: 1rem;
         text-align: center;
         .logo-club{
+            display: flex;
+            justify-content: center;
+            border: 2px solid greenyellow;
+            width: 100%;
             img{
+                border: 1px solid red;
                 position: absolute;
-                left:100px;
+                left:auto;
                 top:-105px;
                 width: 200px;
             }   

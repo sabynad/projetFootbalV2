@@ -1,0 +1,95 @@
+header{
+    .container-top {
+        .social {
+            display: none;
+        }
+        .partners {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            img {
+                display: block;
+                height: 50px;
+            }
+        }
+    }
+    .container-bottom {
+        > .wrapper {   /* > Enfant direct*/
+            display: flex;
+            align-items: center;
+        }
+        .burger-menu{
+            margin-right: 0.5rem;
+            z-index: 1;
+            .burger-menu-button{
+                width: 35px;
+                height: 0;
+                display: block;
+                position: relative;
+                padding-top: 9px;
+                padding-bottom: 11px;
+
+                span {
+                    display: block;
+                    height: 0;
+                    width: 100%;
+                    border-top: 2px solid $black;
+                }
+                &:before,&:after {
+                    content: "";
+                    display: block;
+                    width: 20px;
+                    border-top: 2px solid $black;
+                    position: absolute;
+                }
+                &:before {
+                    top: 0;
+                    right: 0;
+                }
+                &:after {
+                    bottom: 0;
+                    left: 0;
+                }
+            }
+
+            .burger-menu-content {
+                position: fixed;
+                top: 0;
+                background: $red;
+                padding: 1rem;
+                height: 100vh;
+                width: 100%;
+                transform: translateX(-100%);
+                right: 100%;
+                transition: transform .35s, right .35s;
+                a {
+                    color: $white;
+                    text-decoration: none;
+                }
+                body.open & {
+                    transform: translateX(0);
+                    right: 0;
+                }
+            }
+        }
+
+
+        .logo {
+            display: block;
+            width: 50px;
+        }
+        .login {
+            font-size: 30px;
+            a {
+                color: $red;
+            }
+        }
+
+        .subcontainer {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            align-items: center;
+        }
+    }
+}

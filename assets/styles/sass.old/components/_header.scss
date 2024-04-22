@@ -6,17 +6,34 @@
 
 // ---------------------------------------générale 
 header {
-  width: 100%;       
+  width: 100%;  
+  height: auto;     
+  
 }
 
 // -------------------------------------partie haute du header
 .cont-header-top{
+  border: 3px solid violet;
+  width: 100%;
   margin-right: 15px;
   margin-top: 5px;
   display: flex;
   justify-content: flex-end;
+  .icon-reseau-sociaux{
+    border: 2px solid green;
+    display: flex;
+    flex-direction: row;
+    @media (max-width: 767px){
+      display: none;
+    }
+    i{
+      border: 2px solid yellow;
+      width: 50%;
+    }
+  }
   img {
     width: 20%;
+    height: auto;
   }
 }
 
@@ -25,10 +42,11 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
+  border: 2px solid black;
+  
   .logo-sixfours {
     width: 25%;
-    // height: auto;
+    height: auto;
   }
 
   a {
@@ -191,10 +209,13 @@ header {
 .burger-rectangle.open::after {
   transform: translateX(11px) translateY(9px) rotate(-90deg);
 }
-//--------------------------------------------------------------------------------------------------------------------
 
 
-// ---------------------------------------------media queries Tablette----------------------------------
-@media screen and (min-width: 768px) {
 
-}
+
+// ---------------------------------------------media queries----------------------------------
+
+@import url('components/responsiveHeader.scss');
+
+
+

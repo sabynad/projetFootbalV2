@@ -2,13 +2,13 @@
 .general-form{
     width: 70%;
     margin: auto;
-    margin-top: 10%;
+    margin-top: 15%;
     inline-size: 20rem;
 }
 
 .titre-login{
     
-    font-size: 0.9rem;
+    font-size: 1rem;
     display: flex;
     align-items: center;
     img{
@@ -21,18 +21,19 @@
     display: flex;
     flex-direction: column;
     border: none;
-    gap: 2rem;  
+    gap: 3rem;  
     margin-bottom: 1rem;
     
     label {
         display: none;
     }
-    input  {
+    input[type="email"], input[type="password"]  {
         border: none;
         padding: 10px;
         border-bottom: 1px solid rgba(143, 148, 152, 0.5);
         background: white;
     }
+    
 }
 
 .bottom-form{
@@ -40,7 +41,7 @@
     padding: 1rem;
     text-align: center;
     .btn-form{
-        background-color: $bouton;
+        background-color: $red;
         color: $titre-bouton; 
         border-radius: 1rem;
         padding: 0.8rem;
@@ -48,11 +49,11 @@
     }
 }
 
-// .register-acces{
-//     margin-top: 2rem;
-//     font-size: 0.5rem;
-//     color: #D74B2E;
-//     a:visited {
-//         color: #D74B2E;
-//     }
-// }
+.register-acces{
+    margin-top: 2rem;
+    font-size: 0.5rem;
+    color: #D74B2E;
+    a:visited {
+        color: #D74B2E;
+    }
+}

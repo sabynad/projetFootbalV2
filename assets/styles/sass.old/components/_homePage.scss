@@ -1,17 +1,19 @@
 
    
 .cont-main {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+    border: 2px solid red;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 }
 
 // actualité carrousselle---------------------------------------------------------------------
 .cont-actualite-carroussel {
     // border: 3px solid red;
     width: 100%;
-    height: 25rem;
+    height: 20rem;
     padding-bottom: 12%;
     background-image: url('/images/actualite_1.jpg');
     background-size: cover; // pour que l'image prenne tout l'espace
@@ -52,12 +54,14 @@
     font-size: $size-h1;
     // border: 3px solid green;
     .box-match-classement{
-        // border: 3px solid blue;
+        border: 3px solid blue;
         text-align: center;
         background-color: rgb(255, 255, 255);
         width: 90%;
-        height: 350px;
+        height: 370px;
         margin: -30px auto;
+        display: flex;
+        flex-direction: column;
         .date-match{
             margin-top: 0.5rem;
             font-size: 0.8rem;
@@ -69,13 +73,25 @@
         }
         .equipe-score-match{
             font-size: 1rem;
-            margin-bottom: 1rem;
+            margin-bottom: 1rem;   
         }
         .versus{
             background-color: #bfbdbd;
             color: white;
         }
-    }     
+        a{
+        color: #D74B2E;
+        text-align: center;
+        }
+        .classement-match{
+            // width: 100%;
+        }
+        .stat-match{
+            font-size: 0.5rem;
+            
+        }
+        
+    }  
 }
 
 // bloc actualité----------------------------------------------------------------------------------
@@ -278,6 +294,10 @@
 }
 
 
+
+// ---------------------------------------------media queries----------------------------------
+
+@import url('sass/responsiveHomePage.scss');
 
 
 

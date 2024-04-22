@@ -1,0 +1,90 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Joueur{% endblock %}
+
+{% block body %}
+    <h1>Joueur</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ joueur.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ joueur.nom }}</td>
+            </tr>
+            <tr>
+                <th>Prenom</th>
+                <td>{{ joueur.prenom }}</td>
+            </tr>
+            <tr>
+                <th>Date_naissance</th>
+                <td>{{ joueur.dateNaissance ? joueur.dateNaissance|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Numero</th>
+                <td>{{ joueur.numero }}</td>
+            </tr>
+            <tr>
+                <th>Poste</th>
+                <td>{{ joueur.poste }}</td>
+            </tr>
+            <tr>
+                <th>Numero_licence</th>
+                <td>{{ joueur.numeroLicence }}</td>
+            </tr>
+            <tr>
+                <th>CartonJaune</th>
+                <td>{{ joueur.cartonJaune }}</td>
+            </tr>
+            <tr>
+                <th>CartonRouge</th>
+                <td>{{ joueur.cartonRouge }}</td>
+            </tr>
+            <tr>
+                <th>MatchJoue</th>
+                <td>{{ joueur.matchJoue }}</td>
+            </tr>
+            <tr>
+                <th>NbrPasse</th>
+                <td>{{ joueur.nbrPasse }}</td>
+            </tr>
+            <tr>
+                <th>NbrPasseDecisif</th>
+                <td>{{ joueur.nbrPasseDecisif }}</td>
+            </tr>
+            <tr>
+                <th>NbrTir</th>
+                <td>{{ joueur.nbrTir }}</td>
+            </tr>
+            <tr>
+                <th>NbrBut</th>
+                <td>{{ joueur.nbrBut }}</td>
+            </tr>
+            <tr>
+                <th>ArretGardien</th>
+                <td>{{ joueur.arretGardien }}</td>
+            </tr>
+            <tr>
+                <th>ButEncaisser</th>
+                <td>{{ joueur.butEncaisser }}</td>
+            </tr>
+            <tr>
+                <th>PenaltyDispute</th>
+                <td>{{ joueur.penaltyDispute }}</td>
+            </tr>
+            <tr>
+                <th>PenaltyArrete</th>
+                <td>{{ joueur.penaltyArrete }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_joueur_index') }}">back to list</a>
+
+    <a href="{{ path('app_joueur_edit', {'id': joueur.id}) }}">edit</a>
+
+    {{ include('joueur/_delete_form.html.twig') }}
+{% endblock %}
