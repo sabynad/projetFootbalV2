@@ -50,31 +50,22 @@
 
 //contenaire affichage match et classement--------------------------------------------------------
 .cont-match-classement{
-    width: 100%;
     // border: 2px solid red;
+    width: 100%;
     height: 21rem;
     padding: 5%;
     margin-bottom: 15%;
-   
     font-size: $size-h1;
-    // border: 3px solid green;
     .box-match-classement{
         // border: 3px solid blue;
-        text-align: center;
-        background-color: rgb(255, 255, 255);
-        width: 90%;
-        height: 30px;
+        width: 100%;
         margin-top: -100px ;
-    
-
-        // padding-top: 10px;
         padding-bottom: 500px;
-        display: flex;
-        flex-direction: column;
-        .date-match{
-            margin-top: 0.5rem;
-            font-size: 0.8rem;
-        }
+      
+        // .date-match{
+        //     margin-top: 0.5rem;
+        //     font-size: 0.8rem;
+        // }
         .logo-match img{
             width: 18%;
             border-radius:50%;
@@ -144,17 +135,17 @@
         .box-actualite5{
             display: none;
         }
-
     }
 
-    // .box-actualite4{
-    //     display: none;
-    // }
-
-    // .box-actualite5{
-    //     display: none;
-    // }
-
+    // test
+    .cont-actu2-actu3{
+        border: 2px solid red;
+        width: 100%;              
+        display: flex;
+    
+    }
+    // -----
+    
     .img-section-actualite1{
         background-image: url('/images/actualite_2.jpg');
     }
@@ -181,6 +172,24 @@
         align-self: flex-start;
         margin: 1rem ;
     }
+    .cont-event2-event3{
+        border: 2px solid green;
+        display: flex;
+        // justify-content: space-between;
+        width: 90%;
+        // height: auto;
+        .box-evenement{
+            border: 2px solid red;
+            flex: 1;  //Pour que les deux boîtes d'événement occupent le même espace
+        }
+       
+        .img-event{
+            width: 100%; /* Pour que les images occupent tout l'espace de leurs conteneurs */
+            height: 100%; /* Pour que les images occupent tout l'espace de leurs conteneurs */
+            object-fit: cover; /* Redimensionner l'image pour qu'elle remplisse le conteneur tout en conservant son aspect ratio */
+
+        }
+    }
     .box-evenement {
         display: flex;
         flex-direction: column;
@@ -205,7 +214,7 @@
     .box-evenement5{
         display: none; 
     }
-    
+
     .box-title-evenement{
         width: 90%;
         margin:  0 0 1rem;
@@ -219,26 +228,25 @@
 
 // Bloc shop-----------------------------------------------------------------------------------
 .cont-shop{
-    font-size: $size-h1;
+    border: 2px solid green;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 90%;
-    margin-top: 1.5rem;
+    flex-flow: wrap;
+    align-items: flex-start;
+    
     .shop-titre{
+        border: 2px solid red;
         color: $titre-shop-actu;
         align-self: flex-start;
     }
     .box-shop{
+        border: 2px solid pink;
+        width: 200px;
         display: flex;
-        flex-direction: column;
-        align-items: center;
+        // justify-content: space-around;
+       
         .img-shop{
-            display: flex;
-            justify-content: center;
-            img{
-                width: 100%;
-            }      
+            border: 2px solid blue;
+            display: flex;  
         }
         .box-bouton{
             display: flex;
@@ -264,7 +272,7 @@
     height: 18rem;
     padding-bottom: 9%;
     background-image: url('/images/equipe1.jpg');
-    background-size: cover; //pour que l'image prenne tout l'espace
+    // background-size: cover; //pour que l'image prenne tout l'espace
     background-position: center;
     display: flex;
     align-items: center;
@@ -322,7 +330,7 @@
     .logo-partenaire img{
         // border: 3px solid violet;
         justify-content: space-around;
-        max-height: 45px;
+        max-height: 75px;
     }
 }
 
