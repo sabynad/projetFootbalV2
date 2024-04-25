@@ -3,10 +3,10 @@
     <div class="cont-header">
         <div class="container-top">
             <div class="social">
-                <a target="_blank" href="https://www.facebook.com/p/Six-fours-le-brusc-fc-100069607824620/" ><i class="fa-brands fa-facebook"></i></a>
-                <a target="_blank" href="https://www.instagram.com/sixfoursfc83/"><i class="fa-brands fa-instagram"></i></a>
-                <a target="_blank" href="https://twitter.com/6fourslesplages?lang=fr"><i class="fa-brands fa-x-twitter"></i></a>
-                <a target="_blank" href="https://www.youtube.com/@toulonfootball"><i class="fa-brands fa-youtube"></i></a>   
+                <a target="_blank" href="https://www.facebook.com/p/Six-fours-le-brusc-fc-100069607824620/" ><i class="mdi mdi-facebook"></i></a>
+                <a target="_blank" href="https://www.instagram.com/sixfoursfc83/"><i class="mdi mdi-instagram"></i></a>
+                <a target="_blank" href="https://twitter.com/6fourslesplages?lang=fr"><i class="mdi mdi-twitter"></i></a>
+                <a target="_blank" href="https://www.youtube.com/@toulonfootball"><i class="mdi mdi-youtube"></i></a>   
             </div>
             <div class="partners">
                 <img alt="Kappa" src="/images/Kappa-Logo.png">     
@@ -17,7 +17,7 @@
         <div class="container-bottom">
             <div class="wrapper">
                 <div class="burger-menu">
-                    <span class="burger-menu-button"><span></span></span>
+                    <span class="burger-menu-button"><span></span>
                     <div class="burger-menu-content">
                         <span class="burger-menu-close">Fermer</span>
                         <ul class="lg-burger-links">
@@ -45,10 +45,10 @@
                     {# condition pour afficher le logo connection et le logo qui change une fois connecter #}
                     <div class="login">
                     {% if app.user %}
-                        <a href="{{path('admin.index')}}"><i class="fa-solid fa-circle-user"></i></a>
+                        <a href="{{path('admin.index')}}"><i class="mdi mdi-account-circle"></i></a>
                     {% else %}
                         <a href="{{ path('app_login') }}">
-                            <i class="fa-solid fa-right-to-bracket"></i>
+                            <i class="mdi mdi-login"></i>
                         </a>
                     {% endif %}
                     </div>

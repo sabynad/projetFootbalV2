@@ -26,7 +26,7 @@
         width:90%;
         justify-self: flex-end;
         .title-articles{   
-            border: 2px solid greenyellow; 
+            // border: 2px solid greenyellow; 
             width: 100%;
             margin-bottom: 3rem;
             font-size: $size-h1;
@@ -37,18 +37,13 @@
             }
             p{
                 font-size: 1.5rem;
-            }
-            // .para-dans-image p {
-            //     font-size: $size-paragraphe; // Utilisation d'une variable pour la taille du paragraphe
-            //     margin: 10px 0; // Ajoute une marge en haut et en bas pour l'espacement
-            //     color: $paragraphe;
-            // }        
+            }    
             .btn-index{     
                 padding: 7px 40px;
                 background-color: $red;
                 color: $titre-bouton; 
                 border-radius: 1rem;
-                margin-top: 0.4rem;
+                margin-top: 1.4rem;
             }
             .btn-index:hover {
                 cursor: pointer;
@@ -107,67 +102,21 @@
 
 // bloc actualité----------------------------------------------------------------------------------
 .cont-actualite{
-    // border: 3px solid red;
-    font-size: $size-h1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 90%;
-    margin: 30px auto 30px;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+
     .actualite-title {
-        align-self: flex-start;
+        grid-column: 1/-1;
     }
 
     .box-actualite {
-        width: 100%;
         height: 30vh;
-        // border: 3px solid orange;
-        margin-bottom: 60px;
-        position: relative;
-        .img-section-actualite{
-            width: 100%;
-            height: 100%;
-            background-size: cover;
-            background-position: center;
-        } 
-        .box-titre {  
-            position: absolute;      
-            // border: 3px solid violet;
-            background-color: white;
-            padding: 20px;
-            bottom: -45px;
-            left: 5%;
-            width: 90%;      
-        }
-        .box-actualite4{
-            display: none;
-        }
-        .box-actualite5{
-            display: none;
-        }
-    }
 
-    // test
-    .cont-actu2-actu3{
-        border: 2px solid red;
-        width: 100%;              
-        display: flex;
-        justify-content: space-between;
-    
-    }
-    // -----
-    
-    .img-section-actualite1{
-        background-image: url('/images/actualite_2.jpg');
-    }
-    .img-section-actualite2{
-        background-image: url('/images/actualite_3.jpg');
-    }
-    .img-section-actualite3{
-        background-image: url('/images/actualite_4.jpg');
+        &:nth-of-type(1) {
+            grid-column: 1/-1;
+        }
     }
 }
-
 
 // Bloc evenement-----------------------------------------------------------------------------------
 .cont-evenement{
@@ -178,19 +127,17 @@
     width: 100%;
     padding-bottom: 1rem;
     background-color: black;
+    
     .evenement-title{
         color: $titre-event;
         align-self: flex-start;
         margin: 1rem ;
     }
     .cont-event2-event3{
-        border: 2px solid green;
+        // border: 2px solid green;
         display: flex;
-        // justify-content: space-between;
         width: 90%;
-        // height: auto;
         .box-evenement{
-            border: 2px solid red;
             flex: 1;  //Pour que les deux boîtes d'événement occupent le même espace
         }
        
@@ -239,7 +186,7 @@
 
 // Bloc shop-----------------------------------------------------------------------------------
 .cont-shop{
-    border: 2px solid green;
+    // border: 2px solid green;
     display: flex;
     width:90%;
     align-items: flex-start;
@@ -247,24 +194,24 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
-        border: 3px solid black;
+        // border: 3px solid black;
         width: 100%;
     }
     
     .shop-titre{
-        border: 2px solid red;
+       
         color: $titre-shop-actu;
         align-self: flex-start;
     }
     .box-shop{
-        border: 2px solid pink;
+        
         width: 47%;
         display: flex;
         margin-bottom: 5%;
         // justify-content: space-around;
        
         .img-shop{
-            border: 2px solid blue;
+           
             display: flex;  
             width: 100%;
         }
@@ -292,13 +239,11 @@
     height: 18rem;
     padding-bottom: 9%;
     background-image: url('/images/equipe1.jpg');
-    // background-size: cover; //pour que l'image prenne tout l'espace
     background-position: center;
     display: flex;
     align-items: center;
     .overley-joueur {
         width:100%;
-        // justify-self: flex-end;
         .title-image{    
             font-size: $size-h1;
             color: $titre-img;
@@ -309,7 +254,6 @@
                 font-size: $size-paragraphe; // Utilisation d'une variable pour la taille du paragraphe
                 margin: 10px 0; // Ajoute une marge en haut et en bas pour l'espacement
                 color: $paragraphe;
-                // justify-content:end;
             }        
             .btn-index{     
                 padding: 7px 40px;
@@ -332,7 +276,6 @@
     height: 45vh;
     margin-top: 2rem;
     .titre-partenaires{
-        // border: 2px solid blue;
         text-align: center;
         font-size: $size-h1;
         color: $titre-partenaire;
@@ -345,10 +288,8 @@
         justify-content: space-around;
         flex-wrap: wrap;
         margin-top: 4rem;
-        // border: 2px solid black;
     }
     .logo-partenaire img{
-        // border: 3px solid violet;
         justify-content: space-around;
         max-height: 75px;
     }

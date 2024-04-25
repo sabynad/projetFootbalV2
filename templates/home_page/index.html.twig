@@ -73,52 +73,16 @@
             <h2 class="actualite-title"> ACTUALITE </h2>
 
             {# actu 1 #}
-            <div class="box-actualite box-actualite1">
-                <div  class="img-section-actualite img-section-actualite1">
-                </div>                    
-                <div class="box-titre box-titre-actualite1">
-                    <h2> Titre de l'article actualité 1 </h2>  
-                </div>
-            </div>
-
-            {# actu 2 #}
-            <div class="cont-actu2-actu3">
-                <div class="box-actualite box-actualite2">
-                    <div  class="img-section-actualite img-section-actualite2">
+            {% for article in articles %}
+                <article class="box-actualite">
+                    <div  class="img-section-actualite">
+                        <img src="/images/{{ article.image }}"
+                    </div>                    
+                    <div class="box-titre">
+                        <h2>{{ article.titre }}</h2>  
                     </div>
-                    <div class="box-titre box-titre-actualite2">
-                        <h2> Titre de l'article actualité 2 </h2>  
-                    </div>
-                </div>
-            
-            {# actu 3 #}
-                <div class="box-actualite box-actualite3">
-                    <div  class="img-section-actualite img-section-actualite3">
-                    </div>
-                    <div class="box-titre box-titre-actualite3">
-                        <h2> Titre de l'article actualité 3 </h2>  
-                    </div>
-                </div>
-            </div>
-
-
-            {# actu 4 #}
-            <div class="box-actualite box-actualite4">
-                <div  class="img-section-actualite img-section-actualite4">
-                </div>
-                <div class="box-titre box-titre-actualite4">
-                    <h2> Titre de l'article actualité 4 </h2>  
-                </div>
-            </div>
-
-            {# actu 5 #}
-            <div class="box-actualite box-actualite5">
-                <div  class="img-section-actualite img-section-actualite5">
-                </div>
-                <div class="box-titre box-titre-actualite5">
-                    <h2> Titre de l'article actualité 5 </h2>  
-                </div>
-            </div>
+                </article>
+            {% endfor %}
         </section>
 
        

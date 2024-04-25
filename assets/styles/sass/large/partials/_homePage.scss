@@ -106,62 +106,34 @@
 
 // bloc actualité----------------------------------------------------------------------------------
 .cont-actualite{
-    // border: 3px solid red;
-    font-size: $size-h1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 90%;
-    margin: 30px auto 30px;
-    .actualite-title {
-        align-self: flex-start;
-    }
-    
-    .box-actualite4 {
-        display: block;
-    }
-    .box-actualite5{
-        display: block;
-    }
+    grid-template-columns: repeat(6, 1fr);
 
     .box-actualite {
-        width: 100%;
         height: 20vh;
-        // border: 3px solid orange;
-        margin-bottom: 60px;
-        position: relative;
-        .img-section-actualite{
-            width: 100%;
-            height: 100%;
-            background-size: cover;
-            background-position: center;
-        } 
-        .box-titre {  
-            position: absolute;      
-            // border: 3px solid violet;
-            background-color: white;
-            padding: 20px;
-            bottom: -45px;
-            left: 5%;
-            width: 90%;      
+
+        &:nth-of-type(1) {
+            grid-column: 1/4;
         }
-    }
-    .img-section-actualite1{
-        background-image: url('/images/actualite_2.jpg');
-    }
-    .img-section-actualite2{
-        background-image: url('/images/actualite_3.jpg');
-    }
-    .img-section-actualite3{
-        background-image: url('/images/actualite_4.jpg');
-    }
 
-    .img-section-actualite4{
-        background-image: url('/images/actualite_5.jpg');
-    }
+        &:nth-of-type(2) {
+            grid-column: 4/7;
+        }
 
-    .img-section-actualite5{
-        background-image: url('/images/actualite_6.jpg');
+        &:nth-of-type(3) {
+            grid-column: 1/3;
+        }
+
+        &:nth-of-type(4) {
+            grid-column: 3/5;
+        }
+
+        &:nth-of-type(5) {
+            grid-column: 5/7;
+        }
+
+        &:nth-child(5), &:nth-child(6) {
+            display: block;
+        }
     }
 }
 
