@@ -72,13 +72,13 @@
         <section class="cont-actualite">
             <h2 class="actualite-title"> ACTUALITE </h2>
 
-            {# actu 1 #}
+            {# actu  #}
             {% for article in articles %}
                 <article class="box-actualite">
                     <div  class="img-section-actualite">
                         <img src="/images/{{ article.image }}"
                     </div>                    
-                    <div class="box-titre">
+                    <div class="box-title">
                         <h2>{{ article.titre }}</h2>  
                     </div>
                 </article>
@@ -88,23 +88,48 @@
        
         {# BLOC EVENEMENT--------------------------------------------------------------- #}
         {# ----------------------------------------------------------------------------- #}
+
         <section class="cont-evenement">
+            <h2 class"evenement-title"> EVENEMENT </h2>
+
+            {# event #}
+            {% for articles in articles %}
+                <article class="box-evenement">
+                    <div class="img-section-evenement">
+                        <img src="/images/evenement_4.jpg" alt="victoire celebration">
+                    </div>
+                    <div class="box-title-evenement">
+                        <h2>Titre event</h2>
+                    </div>
+                </article>
+            {% endfor %}
+        </section>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        {# <section class="cont-evenement">
             <div class="evenement-title">
                 <h2> EVENEMENT </h2>
             </div> 
 
             {# evenement 1 #}
-            <div class="box-evenement box-evenement1">
+            {# <div class="box-evenement box-evenement1">
                 <div class="img-event img-event-1">
                     <img src="/images/evenement_4.jpg" alt="victoire celebration">  
                 </div>
                 <div class="box-title-evenement">  
                     <h3> Titre de l'évènement 1 </h3>  
                 </div>   
-            </div>
+            </div> #}
 
             {# evenement 2 #}
-            <div class="cont-event2-event3">
+            {# <div class="cont-event2-event3">
                 <div class="box-evenement box-evenement2">
                     <div class="img-event img-event-2">
                         <img src="/images/evenement_1.jpg" alt="stade avec joueurs">  
@@ -112,10 +137,10 @@
                     <div class="box-title-evenement">
                         <h3> Titre de l'évènement 2 </h3>  
                     </div>   
-                </div>
+                </div> #}
 
                 {# evenement 3 #}
-                <div class="box-evenement box-evenement3">
+                {# <div class="box-evenement box-evenement3">
                     <div class="img-event img-event-3">
                         <img src="/images/evenement_2.jpg" alt="joueurs à l'entrainement">  
                     </div>
@@ -123,28 +148,28 @@
                         <h3> Titre de l'évènement 3 </h3>  
                     </div> 
                 </div>
-            </div>
+            </div> #}
 
             {# evenement 4 #}
-            <div class="box-evenement box-evenement4">
+            {# <div class="box-evenement box-evenement4">
                 <div class="img-event img-event-4">
                     <img src="/images/evenement_6.jpg" alt="joueurs à l'entrainement">  
                 </div>
                 <div class="box-title-evenement">
                      <h3> Titre de l'évènement 4 </h3>  
                 </div> 
-            </div>
+            </div> #}
 
             {# evenement 5 #}
-            <div class="box-evenement box-evenement5">
+            {# <div class="box-evenement box-evenement5">
                 <div class="img-event img-event-5">
                     <img src="/images/evenement_5.avif" alt="joueurs à l'entrainement">  
                 </div>
                 <div class="box-title-evenement">
                      <h3> Titre de l'évènement 5 </h3>  
                 </div> 
-            </div>
-        </section>
+            </div> #}
+        {# </section>  #}
             
         {# BLOC BOUTIQUE---------------------------------------------------------------- #}
         {# ------------------------------------------------------------------------------#}

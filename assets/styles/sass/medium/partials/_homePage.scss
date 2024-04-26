@@ -1,50 +1,24 @@
   
-.cont-main {
-    background-color: $main-bacground;
-    // border: 2px solid red;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-}
-
 // actualité carrousselle---------------------------------------------------------------------
 .cont-articles {
-    // border: 3px solid red;
-    width: 100%;
     height: 35rem;
-    padding-bottom: 12%;
-    background-image: url('/images/actualite_1.jpg');
-    background-size: cover; // pour que l'image prenne tout l'espace
-    background-position: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: end;
+    
     .item {
-        width:90%;
-        justify-self: flex-end;
         .title-articles{   
-            // border: 2px solid greenyellow; 
-            width: 100%;
             margin-bottom: 3rem;
-            font-size: $size-h1;
-            color: $titre-img; 
-            line-height: 2rem;
+    
             h2{
                 font-size: 2.3rem;
             }
+
             p{
                 font-size: 1.5rem;
             }    
+
             .btn-index{     
-                padding: 7px 40px;
-                background-color: $red;
-                color: $titre-bouton; 
-                border-radius: 1rem;
                 margin-top: 1.4rem;
             }
+
             .btn-index:hover {
                 cursor: pointer;
             }       
@@ -55,50 +29,20 @@
 
 //contenaire affichage match et classement--------------------------------------------------------
 .cont-match-classement{
-    // border: 2px solid red;
-    width: 100%;
-    height: 21rem;
     padding: 5%;
     margin-bottom: 15%;
-    font-size: $size-h1;
     .box-match-classement{
         // border: 3px solid blue;
         width: 100%;
         margin-top: -100px ;
         padding-bottom: 500px;
       
-        // .date-match{
-        //     margin-top: 0.5rem;
-        //     font-size: 0.8rem;
-        // }
-        .logo-match img{
-            width: 18%;
-            border-radius:50%;
-            margin: 1rem;
-        }
-        .equipe-score-match{
-            font-size: 1rem;
-            margin-bottom: 1rem;   
-        }
-        .versus{
-            background-color: #bfbdbd;
-            color: white;
-        }
-        a{
-        color: #D74B2E;
-        text-align: center;
-        }
         .classement-match{
-            // width: 100%;
             padding: 5%;
         }
-        .stat-match{
-            font-size: 0.5rem;
-            
-        }
-        
     }  
 }
+
 
 // bloc actualité----------------------------------------------------------------------------------
 .cont-actualite{
@@ -111,7 +55,6 @@
 
     .box-actualite {
         height: 30vh;
-
         &:nth-of-type(1) {
             grid-column: 1/-1;
         }
@@ -120,177 +63,50 @@
 
 // Bloc evenement-----------------------------------------------------------------------------------
 .cont-evenement{
-    font-size: $size-h1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    padding-bottom: 1rem;
-    background-color: black;
-    
-    .evenement-title{
-        color: $titre-event;
-        align-self: flex-start;
-        margin: 1rem ;
-    }
-    .cont-event2-event3{
-        // border: 2px solid green;
-        display: flex;
-        width: 90%;
-        .box-evenement{
-            flex: 1;  //Pour que les deux boîtes d'événement occupent le même espace
-        }
-       
-        .img-event{
-            width: 100%; /* Pour que les images occupent tout l'espace de leurs conteneurs */
-            height: 100%; /* Pour que les images occupent tout l'espace de leurs conteneurs */
-            object-fit: cover; /* Redimensionner l'image pour qu'elle remplisse le conteneur tout en conservant son aspect ratio */
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
 
+    .evenement-title {
+        grid-column: 1/-1;
+    }
+        
+    .box-evenement{
+        height: 30vh;
+        &:nth-of-type(1) {
+            grid-column: 1/-1;
         }
     }
-    .box-evenement {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        .box-title-evenement{
-        color: $titre-event; 
-        background-color: $background-titre-evenement;
-        width: 90%;
-        height: 6vh;
-        }
-        .img-event{
-            display: flex;
-            justify-content: center;
-            img{
-                width: 90%;  
-            }
-        }
-    }
-    .box-evenement4{
-        display: none;
-    }
-    .box-evenement5{
-        display: none; 
-    }
-
-    .box-title-evenement{
-        width: 90%;
-        margin:  0 0 1rem;
-        h3{
-        color: $titre-event;
-        font-size: $size-paragraphe;
-        // margin: 1rem;
-        }
-    }  
 }
+
+    
+
 
 // Bloc shop-----------------------------------------------------------------------------------
 .cont-shop{
-    // border: 2px solid green;
-    display: flex;
-    width:90%;
-    align-items: flex-start;
     .cont-box-shop{
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
-        // border: 3px solid black;
-        width: 100%;
-    }
-    
-    .shop-titre{
-       
-        color: $titre-shop-actu;
-        align-self: flex-start;
     }
     .box-shop{
-        
         width: 47%;
-        display: flex;
-        margin-bottom: 5%;
-        // justify-content: space-around;
-       
-        .img-shop{
-           
-            display: flex;  
-            width: 100%;
-        }
-        .box-bouton{
-            display: flex;
-            justify-content: center;   
-            background-color: $background-border-bouton-shop;
-            width: 100%;
-            margin-bottom: 2rem;
-            padding:1rem;
-            .btn-shop{  
-                padding: 7px 40px;
-                background-color: $red;
-                color: $titre-bouton; 
-                border-radius: 1rem;
-                margin-top: 0.4rem;
-                cursor: pointer;
-            }
-        }
     }
 }
+
+
 /* Bloc equipe 1er-----------------------------------------------------------------------------------*/
 .cont-equipe1 {
-    width: 100%;
-    height: 18rem;
-    padding-bottom: 9%;
-    background-image: url('/images/equipe1.jpg');
-    background-position: center;
-    display: flex;
-    align-items: center;
     .overley-joueur {
-        width:100%;
         .title-image{    
-            font-size: $size-h1;
-            color: $titre-img;
-            text-align: center;
-            font-weight: bold; //ecriture en gras
-            margin-top: 30%;
-            .para-image p {
-                font-size: $size-paragraphe; // Utilisation d'une variable pour la taille du paragraphe
-                margin: 10px 0; // Ajoute une marge en haut et en bas pour l'espacement
-                color: $paragraphe;
-            }        
-            .btn-index{     
-                padding: 7px 40px;
-                background-color: $red;
-                color: $titre-bouton; 
-                border-radius: 1rem;
-                margin-top: 0.4rem;
-            }
-            .btn-index:hover {
-                cursor: pointer;
-            }       
+            margin-top: 20%;    
         }
     }
 }
+
+
 // partie partenaires--------------------------------------------------------------------------------
 .cont-partenaire{
-    // border: 2px solid red;
-    background-color: white;
-    width: 100%;
-    height: 45vh;
-    margin-top: 2rem;
-    .titre-partenaires{
-        text-align: center;
-        font-size: $size-h1;
-        color: $titre-partenaire;
-        margin-top:0.4rem;
-    }
-    .logo-partenaire{
-        // width: 100%;
-        display: flex;
-        justify-content: center;
-        justify-content: space-around;
-        flex-wrap: wrap;
-        margin-top: 4rem;
-    }
     .logo-partenaire img{
-        justify-content: space-around;
         max-height: 75px;
     }
 }

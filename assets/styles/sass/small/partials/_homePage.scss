@@ -84,9 +84,6 @@
         color: #D74B2E;
         text-align: center;
         }
-        // .classement-match{
-        //     // width: 100%;
-        // }
         .stat-match{
             font-size: 0.5rem;
             
@@ -109,9 +106,9 @@
         align-self: flex-start;
         
     }
-    .cont-actu2-actu3{
-        width: 100%;
-    }
+    // .cont-actu2-actu3{
+    //     width: 100%;
+    // }
 
     .box-actualite {
         width: 100%;
@@ -130,7 +127,7 @@
                 object-fit: cover;
             }
         } 
-        .box-titre {  
+        .box-title {  
             position: absolute;      
             // border: 3px solid violet;
             background-color: white;
@@ -150,21 +147,21 @@
 // Bloc evenement-----------------------------------------------------------------------------------
 .cont-evenement{
     font-size: $size-h1;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
     align-items: center;
     width: 100%;
-    padding-bottom: 1rem;
+    // padding-bottom: 1rem;
     background-color: black;
-    .evenement-title{
-        color: $titre-event;
-        align-self: flex-start;
-        margin: 1rem ;
-    }
+    // .evenement-title{
+    //     color: $titre-event;
+    //     align-self: flex-start;
+    //     // margin: 1rem ;
+    // }
     .box-evenement {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        // display: flex;
+        // flex-direction: column;
+        // align-items: center;
         .box-title-evenement{
         color: $titre-event; 
         background-color: $background-titre-evenement;
@@ -172,19 +169,13 @@
         height: 6vh;
         }
         .img-event{
-            display: flex;
-            justify-content: center;
+            // display: flex;
+            // justify-content: center;
             img{
                 width: 90%;  
             }
         } 
     }
-    .box-evenement4{
-            display: none;
-        }
-        .box-evenement5{
-            display: none; 
-        }
     
     .box-title-evenement{
         width: 90%;
@@ -193,6 +184,10 @@
         color: $titre-event;
         font-size: $size-paragraphe;
         margin: 1rem;
+        }
+
+        &:nth-child(5), &:nth-child(6) {  //pour que les images 5 et 6 n'apparaissent pas
+            display: none;
         }
     }  
 }
