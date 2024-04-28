@@ -104,12 +104,8 @@
 
     .actualite-title {
         align-self: flex-start;
-        
     }
-    // .cont-actu2-actu3{
-    //     width: 100%;
-    // }
-
+    
     .box-actualite {
         width: 100%;
         height: 20vh;
@@ -153,44 +149,42 @@
     width: 100%;
     // padding-bottom: 1rem;
     background-color: black;
-    // .evenement-title{
-    //     color: $titre-event;
-    //     align-self: flex-start;
-    //     // margin: 1rem ;
-    // }
+
+    .evenement-title{
+        align-self: flex-start;
+    }
+
     .box-evenement {
-        // display: flex;
-        // flex-direction: column;
-        // align-items: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         .box-title-evenement{
         color: $titre-event; 
         background-color: $background-titre-evenement;
         width: 90%;
         height: 6vh;
+        width: 90%;
+        margin:  0 0 1rem;
+            h2{
+            color: $titre-event;
+            font-size: $size-paragraphe;
+            margin: 1rem;
+            }
         }
-        .img-event{
-            // display: flex;
-            // justify-content: center;
+        .img-section-evenement{
+            display: flex;
+            justify-content: center;
             img{
                 width: 90%;  
             }
         } 
-    }
-    
-    .box-title-evenement{
-        width: 90%;
-        margin:  0 0 1rem;
-        h3{
-        color: $titre-event;
-        font-size: $size-paragraphe;
-        margin: 1rem;
-        }
-
+        
         &:nth-child(5), &:nth-child(6) {  //pour que les images 5 et 6 n'apparaissent pas
             display: none;
-        }
-    }  
+        }   
+    }
 }
+
 
 // Bloc shop-----------------------------------------------------------------------------------
 .cont-shop{

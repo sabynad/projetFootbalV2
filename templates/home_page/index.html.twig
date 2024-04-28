@@ -73,7 +73,7 @@
             <h2 class="actualite-title"> ACTUALITE </h2>
 
             {# actu  #}
-            {% for article in articles %}
+            {% for article in articles  %}
                 <article class="box-actualite">
                     <div  class="img-section-actualite">
                         <img src="/images/{{ article.image }}"
@@ -96,6 +96,7 @@
             {% for articles in articles %}
                 <article class="box-evenement">
                     <div class="img-section-evenement">
+                        {# <img src="/images/{{ article.image }}" #}
                         <img src="/images/evenement_4.jpg" alt="victoire celebration">
                     </div>
                     <div class="box-title-evenement">
