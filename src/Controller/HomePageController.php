@@ -31,6 +31,7 @@ class HomePageController extends AbstractController
             'equipes' => $equipeRepository->findAll(),
             // 'scores' => $scores,
             'articles' => $articleRepository->findAll(),
+            // 'articles' => $articleRepository->findBy(array('rubrique_id' => 1)),
         ]);
     }
 

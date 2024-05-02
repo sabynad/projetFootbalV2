@@ -63,19 +63,34 @@
 
 // Bloc evenement-----------------------------------------------------------------------------------
 .cont-evenement{
+    width: 100%;
     grid-template-columns: 1fr 1fr;
     gap: 30px;
-
-    .evenement-title {
-        grid-column: 1/-1;
-    }
-        
+    background-color: black;
+    padding: 5% 5%;
+    h2 {
+        color: white;
+    } 
     .box-evenement{
-        height: 30vh;
+        width: 100%;
         &:nth-of-type(1) {
             grid-column: 1/-1;
         }
+        .img-section-evenement img {
+            width: 100%;
+        }
+        .box-title-evenement {
+            width: 100%;
+            height: auto;
+            padding: 3%;
+        }
     }
+
+    .evenement-title {
+        grid-column: 1/-1;
+        width: 100%;
+    }
+       
 }
 
     
