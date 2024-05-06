@@ -6,6 +6,7 @@ use App\Entity\Joueur;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
@@ -28,7 +29,14 @@ class JoueurCrudController extends AbstractCrudController
             TextField::new('prenom'),
             DateField::new('date_naissance', 'Date de Naissance'),
             IntegerField::new('numero'),
-            TextField::new('poste'),
+            // TextField::new('poste'),
+            ChoiceField::new('poste')
+            ->setChoices([
+                'Attaquant' => 'Attaquant',
+                'Milieu de terrain' => 'Milieu de terrain',
+                'Défenseur' => 'Défenseur',
+                'Gardien de but' => 'Gardien de but',
+            ]),
             IntegerField::new('carton_jaune'),
             IntegerField::new('carton_rouge'),
             IntegerField::new('match_joue'),

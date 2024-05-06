@@ -22,6 +22,12 @@ class HomePageController extends AbstractController
         // / Appel de la méthode lastMatchSixFours pour récupérer le dernier match de Six-Fours et les affichers à la vue
         $lastMatchSixFours = $oppositionRepository->lastMatchSixFours();
         
+        // Récupérer les résultats des matchs pour chaque équipe
+        $resultsByEquipe = [];
+        $equipes = $equipeRepository->findAll();
+        foreach ($equipes as $equipe) {
+            $resultsByEquipe[$equipe->getId()] = $oppositionRepository->getOppositionByEquipe($equipe->getId());
+        }
         
         
 
@@ -29,7 +35,9 @@ class HomePageController extends AbstractController
             'controller_name' => 'HomePageController',
             'lastMatchSixFours' => $lastMatchSixFours,
             'equipes' => $equipeRepository->findAll(),
-            // 'scores' => $scores,
+
+            
+            
             'articles' => $articleRepository->findAll(),
             // 'articles' => $articleRepository->findBy(array('rubrique_id' => 1)),
         ]);

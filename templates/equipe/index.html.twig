@@ -4,53 +4,62 @@
 
 
 {% block body %}
-    <h1>Equipe index</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Nom</th>
-                <th>Categorie</th>
-                <th>Championnat</th>
-                <th>Total point</th>
-                <th>nbr match joue</th>
-                <th>nbr match gagne</th> 
-                <th>nbr match nul</th>
-                <th>nbr match perdu</th> 
-                <th>Logo</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for equipe in equipes %}
-            <tr>
-                <td>{{ equipe.id }}</td>
-                <td>{{ equipe.nom }}</td>
-                <td>{{ equipe.categorie }}</td>
-                <td>{{ equipe.championnat }}</td>
-                <td>{{ scores[equipe.id] ~ ' Points' }}</td>
-                <td>{{ matches[equipe.id] }}</td>
-                <td>{{ matchesGagne[equipe.id] }}</td>
-                <td>{{ matchesNul[equipe.id] }}</td>
-                <td>{{ matchesPerdu[equipe.id] }}</td>
+    <main>
+        <section class="container-tab">
+            <h1 class="mb-5">Classement équipes</h1>
 
-                <td>
-                    <img style="width: 80px; " class="rounded-circle" src="{{ vich_uploader_asset(equipe, 'imageFile') }}"/>
-                </td>
+            <table class="table table-dark">
+                <thead class="thead-dark">
+                    <tr>
+                        {# <th>Id</th> #}
+                        <th> pos </th>
+                        <th>Logo</th>
+                        <th class="colonne">Nom</th>
+                        {# <th>Categorie</th> #}
+                        {# <th>Championnat</th> #}
+                        <th>Total point</th>
+                        <th>match joue</th>
+                        <th>match gagne</th> 
+                        <th>match nul</th>
+                        <th>match perdu</th> 
+                        
+                        {# <th>actions</th> #}
+                    </tr>
+                </thead>
+                <tbody>
+                {% for equipe in equipes %}
+                    <tr>
+                        <td> {{ loop.index }}</td>
+                        <td>
+                            <img style="width: 80px; " class="rounded-circle" src="{{ vich_uploader_asset(equipe, 'imageFile') }}"/>
+                        </td>
+                        {# <td>{{ equipe.id }}</td> #}
+                        <td>{{ equipe.nom }}</td>
+                        {# <td>{{ equipe.categorie }}</td> #}
+                        {# <td>{{ equipe.championnat }}</td> #}
+                        <td>{{ scores[equipe.id] }}</td>
+                        <td>{{ matches[equipe.id] }}</td>
+                        <td>{{ matchesGagne[equipe.id] }}</td>
+                        <td>{{ matchesNul[equipe.id] }}</td>
+                        <td>{{ matchesPerdu[equipe.id] }}</td>
 
-                <td>
-                    <a href="{{ path('app_equipe_show', {'id': equipe.id}) }}">show</a>
-                    <a href="{{ path('app_equipe_edit', {'id': equipe.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="7">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <a href="{{ path('app_equipe_new') }}">Create new</a>
+                       
+                        {# {% if is_granted('ROLE_ADMIN') %}
+                            <td>
+                                <a href="{{ path('app_equipe_show', {'id': equipe.id}) }}">show</a>
+                                <a href="{{ path('app_equipe_edit', {'id': equipe.id}) }}">edit</a>
+                                <a href="{{ path('app_equipe_new') }}">Create new</a> 
+                            </td>
+                        {% endif %} #}
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="7">no records found</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </section>
+    </main>
 {% endblock %}

@@ -62,13 +62,22 @@ header{
                 transform: translateX(-100%);
                 right: 100%;
                 transition: transform .35s, right .35s;
+                li{
+                    border-bottom: 1px solid white;
+                }
                 a {
                     color: $white;
                     text-decoration: none;
+                    
                 }
                 body.open & {
                     transform: translateX(0);
                     right: 0;
+                }
+                .lg-burger-links{
+                    font-size: 1.7rem;
+                    padding-top: 6rem;
+                    line-height: 5rem;    
                 }
             }
         }
