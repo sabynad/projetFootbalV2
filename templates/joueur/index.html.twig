@@ -11,7 +11,7 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th>Id</th>
+                        {# <th>Id</th> #}
                         <th>Nom</th>
                         <th>Prenom</th>
                         <th>Date_naissance</th>
@@ -35,7 +35,7 @@
                 <tbody>
                 {% for joueur in joueurs %}
                     <tr>
-                        <td>{{ joueur.id }}</td>
+                        {# <td>{{ joueur.id }}</td> #}
                         <td>{{ joueur.nom }}</td>
                         <td>{{ joueur.prenom }}</td>
                         <td>{{ joueur.dateNaissance ? joueur.dateNaissance|date('Y-m-d') : '' }}</td>

@@ -22,6 +22,19 @@ class JoueurController extends AbstractController
         ]);
     }
 
+
+    #[Route('/cards', name: 'app_joueur_cards', methods: ['GET'])]
+    public function showCards(JoueurRepository $joueurRepository): Response
+    {
+        $joueurs = $joueurRepository->findAll();
+
+        return $this->render('joueur/cards.html.twig', [
+            'joueurs' => $joueurs,
+        ]);
+    }
+
+
+
     #[Route('/new', name: 'app_joueur_new', methods: ['GET', 'POST'])]
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
