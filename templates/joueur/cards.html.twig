@@ -11,7 +11,6 @@
             {% for joueur in joueurs %}
                 <div class="col-md-4">
                     <div class="card">
-                        {# <img src="../images/joueur1.png" class="card-img-top img-thumbnail" alt="profil joueur"> #}
                         <img src="../images/card.jpg" class="card-img-top" alt="profil joueur">
                         <div class="card-title">
                             {{ joueur.nom }} {{ joueur.prenom }}
@@ -20,7 +19,7 @@
                             <p>{{ joueur.numero }}</p>
                             <p>{{ joueur.poste }}</p>
                             <!-- Ajoutez d'autres informations du joueur ici -->
-                            <a href="{{path('app_joueur_index')}}" class="btn btn-warning mt-4 mb-4">Statistique</a>
+                            <a href="{{path('app_joueur_stat', {'id': joueur.id})}}" class="btn btn-danger mt-4 mb-4">Statistique</a>
                         </div>
                     </div>
                 </div>

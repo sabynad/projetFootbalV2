@@ -22,7 +22,7 @@ class JoueurController extends AbstractController
         ]);
     }
 
-
+    // methode qui definie l'affichage des crtes joueurs
     #[Route('/cards', name: 'app_joueur_cards', methods: ['GET'])]
     public function showCards(JoueurRepository $joueurRepository): Response
     {
@@ -30,6 +30,17 @@ class JoueurController extends AbstractController
 
         return $this->render('joueur/cards.html.twig', [
             'joueurs' => $joueurs,
+        ]);
+    }
+
+    // methode qui permet de recuperer les stat individuel des joueurs
+    #[Route('/stat/{id}', name: 'app_joueur_stat', methods: ['GET'])]
+    public function statistiqueJoueur(int $id, JoueurRepository $joueurRepository): Response
+    {
+        $joueur = $joueurRepository->find($id);
+
+        return $this->render('joueur/stat.html.twig', [
+            'joueur' => $joueur,
         ]);
     }
 

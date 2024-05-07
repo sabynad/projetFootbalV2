@@ -21,6 +21,19 @@ class JoueurRepository extends ServiceEntityRepository
         parent::__construct($registry, Joueur::class);
     }
 
+
+    // récupération statistique pour chaque joueur
+    public function statistiqueJoueur(int $joueurId): ?Joueur
+    {
+        return $this->createQueryBuilder('j')
+            ->andWhere('j.id = :joueurId')
+            ->setParameter('joueurId', $joueurId)
+            ->getQuery()
+            ->getOneOrNullResult();
+    }
+
+
+
     //    /**
     //     * @return Joueur[] Returns an array of Joueur objects
     //     */

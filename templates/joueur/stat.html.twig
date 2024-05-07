@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Statistiques du joueur {% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="profil-img">
+            {# <img src=".public/images/card.jpg" class="card-img-top"> #}
+            <img src="./images/card.jpg" class="card-img-top">
+            {{ joueur.nom }} {{ joueur.prenom }}
+        </div>
+        <div class="box-stat">
+            <div class="poste">
+                <p>{{ joueur.poste }}</p>
+            </div>
+            <div class="match">
+                <p> matchs joués</p>
+                <p>{{ joueur.matchJoue }}</p>
+            </div>
+            <div class="carton">
+                <p>{{ joueur.cartonJaune }} Carton jaune</p>
+                <p>{{ joueur.cartonRouge }} Carton rouge</p>
+            </div>
+            <div class="passe">
+                <p>{{ joueur.nbrPasse }} Passes</p>
+                <p>{{ joueur.nbrPasseDecisif }} Passes décisifs</p>
+            </div>
+            <div class="tir">
+                <p>{{ joueur.nbrTir }} Tir</p>
+                <p>{{ joueur.nbrBut }} But</p>
+            </div>
+            <div class="gardien">
+
+                <p>{{ joueur.arretGardien }} Arret gardien</p>
+                <p>{{ joueur.butEncaisser }} But encaissé</p>
+
+            </div>
+        </div>
+        <a href="{{path('app_joueur_cards')}}" class="btn btn-stat btn-danger mt-4 mb-4"> Retour </a> 
+    </div>
+
+   
+{% endblock %}
