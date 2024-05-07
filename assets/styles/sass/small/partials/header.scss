@@ -17,6 +17,12 @@ header{
         > .wrapper {   /* > Enfant direct*/
             display: flex;
             align-items: center;
+            .btn{
+                width: 70%;
+                color: white;
+                font-size: 0.8rem;
+                cursor: pointer;
+            }
         }
         .burger-menu{
             margin-right: 0.5rem;
@@ -76,7 +82,7 @@ header{
                 }
                 .lg-burger-links{
                     font-size: 1.7rem;
-                    padding-top: 6rem;
+                    padding-top: 0rem;
                     line-height: 5rem;    
                 }
             }

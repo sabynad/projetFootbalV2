@@ -4,11 +4,11 @@ header{
     // flex-direction: column;
     
     .cont-header{
-        padding:  40px 280px;
+        padding:  10px 40px;
         box-shadow: 20px;
     }
     .container-top {
-        padding: 2rem;
+        padding: 0rem;
         justify-content: flex-end;
         align-items: center;
         .social {
@@ -60,6 +60,7 @@ header{
         }
         .subcontainer {
             position: absolute;
+            width: 100%;
             left: 0;
             top: 50%;
             transform: translateY(-50%);

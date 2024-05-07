@@ -17,7 +17,7 @@
         <div class="container-bottom">
             <div class="wrapper">
                 <div class="burger-menu">
-                    <span class="burger-menu-button"><span></span>
+                    <span class="burger-menu-button"><span></span></span>
                     <div class="burger-menu-content">
                         <span class="burger-menu-close">Fermer</span>
                         <ul class="lg-burger-links">
@@ -32,7 +32,6 @@
                     </div>
                 </div>
 
-            
                 <div class="subcontainer">
                     {% set currentPath = path(app.request.attributes.get('_route'),
                         app.request.attributes.get('_route_params')) %}
@@ -46,6 +45,8 @@
                     <div class="login">
                     {% if app.user %}
                         <a href="{{path('admin.index')}}"><i class="mdi mdi-account-circle"></i></a>
+                        <a class="btn btn-danger" type= "submit" href="/logout">Déconnexion</a>
+
                     {% else %}
                         <a href="{{ path('app_login') }}">
                             <i class="mdi mdi-login"></i>
