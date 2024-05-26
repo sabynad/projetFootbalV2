@@ -11,7 +11,8 @@
             {% for joueur in joueurs %}
                 <div class="col-md-4">
                     <div class="card">
-                        <img src="../images/card.jpg" class="card-img-top" alt="profil joueur">
+                        {# <img src="../images/card.jpg" class="card-img-top" alt="profil joueur"> #}
+                        <img src="{{ vich_uploader_asset(joueur, 'imageFile') }}">
                         <div class="card-title">
                             {{ joueur.nom }} {{ joueur.prenom }}
                         </div>

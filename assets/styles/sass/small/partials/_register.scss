@@ -4,13 +4,13 @@
     margin: auto;
     margin-top: 10%;
     inline-size: 20rem;
+    // font-family: sans-serif;
 }
 h1{
     font-size: 1rem;
 }
 
 .titre-login{
-    
     font-size: 0.9rem;
     display: flex;
     align-items: center;
@@ -20,7 +20,6 @@ h1{
 }
 
 .champ-form{
-    
     display: flex;
     flex-direction: column;
     border: none;
@@ -39,7 +38,6 @@ h1{
 }
 
 .bottom-form{
-
     padding: 1rem;
     text-align: center;
     .btn-form{

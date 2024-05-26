@@ -5,36 +5,46 @@
 {% block body %}
     <div class="container">
         <div class="profil-img">
-            {# <img src=".public/images/card.jpg" class="card-img-top"> #}
-            <img src="./images/card.jpg" class="card-img-top">
+            <img src="{{ vich_uploader_asset(joueur, 'imageFile') }}">
             {{ joueur.nom }} {{ joueur.prenom }}
         </div>
         <div class="box-stat">
             <div class="poste">
                 <p>{{ joueur.poste }}</p>
             </div>
+
             <div class="match">
                 <p> matchs joués</p>
                 <p>{{ joueur.matchJoue }}</p>
             </div>
+
             <div class="carton">
                 <p>{{ joueur.cartonJaune }} Carton jaune</p>
                 <p>{{ joueur.cartonRouge }} Carton rouge</p>
             </div>
+
             <div class="passe">
                 <p>{{ joueur.nbrPasse }} Passes</p>
                 <p>{{ joueur.nbrPasseDecisif }} Passes décisifs</p>
             </div>
+
             <div class="tir">
                 <p>{{ joueur.nbrTir }} Tir</p>
                 <p>{{ joueur.nbrBut }} But</p>
             </div>
+
+            {% if joueur.poste == 'Gardien de but' %}   {#condition pour que les statistiques gardiens apparaissent que pour le poste gardien de but#}
             <div class="gardien">
-
-                <p>{{ joueur.arretGardien }} Arret gardien</p>
-                <p>{{ joueur.butEncaisser }} But encaissé</p>
-
+                <div class="arret-but">
+                    <p>{{ joueur.arretGardien }} Arret gardien</p>
+                    <p>{{ joueur.butEncaisser }} But encaissé</p>
+                </div>
+                <div class="penalty">
+                    <p>{{ joueur.penaltyDispute }} Penalty dispute</p>
+                    <p>{{ joueur.penaltyArrete }} Penalty arrete</p>
+                </div>
             </div>
+            {% endif %}
         </div>
         <a href="{{path('app_joueur_cards')}}" class="btn btn-stat btn-danger mt-4 mb-4"> Retour </a> 
     </div>

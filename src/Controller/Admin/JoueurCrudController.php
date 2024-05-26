@@ -6,9 +6,11 @@ use App\Entity\Joueur;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 
 class JoueurCrudController extends AbstractCrudController
@@ -48,6 +50,19 @@ class JoueurCrudController extends AbstractCrudController
             IntegerField::new('but_encaisser'),
             IntegerField::new('penalty_dispute'),
             IntegerField::new('penalty_arrete'),
+            AssociationField::new('equipe')
+            ->setLabel('Équipe')
+            ->setRequired(true)
+            ->autocomplete(),
+
+            ImageField::new('joueurImageName') // Doit correspondre à la propriété de l'entité
+            ->setLabel('photo')
+            ->setBasePath('/images/logo') // Chemin pour accéder aux images dans l'interface
+            ->setUploadDir('public/images/logo') // Répertoire de téléchargement des images
+            ->setRequired(false)
+            ->setUploadedFileNamePattern('[randomhash].[extension]')
+            ->setFormTypeOptions(['required' => false]),
+
             
             // TextEditorField::new('description'),
         ];

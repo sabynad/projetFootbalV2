@@ -1,0 +1,24 @@
+{# {% extends 'base.html.twig' %}
+
+{% block title %}Liste des Equipes{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>Liste des Equipes</h1>
+        <div class="row">
+            {% for equipe in equipes %}
+                <div class="col-md-4">
+                    <div class="card">
+                        <img style="width: 80px;" class="rounded-circle" src="{{ vich_uploader_asset(equipe, 'imageFile') }}"/>
+                        <div class="card-title">
+                            {{ equipe.nom }} 
+                        </div>
+                        <div class="card-content">
+                            <!-- Ajoutez d'autres informations de l'équipe ici -->
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %} #}

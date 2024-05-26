@@ -160,4 +160,16 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
         return $this->redirectToRoute('app_equipe_index', [], Response::HTTP_SEE_OTHER);
     }
 
+
+    
+    // #[Route('/cards_equipes', name: 'app_cards_equipes', methods: ['GET'])]
+    // public function cardsEquipes(EquipeRepository $equipeRepository): Response
+    // {
+    //     $equipes = $equipeRepository->findAll();
+
+    //     return $this->render('equipe/cards_equipes.html.twig', [
+    //         'equipes' => $equipes,
+    //     ]);
+    // }
+
 }

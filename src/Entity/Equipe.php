@@ -53,8 +53,7 @@ class Equipe
     #[ORM\OneToMany(targetEntity: Joueur::class, mappedBy: 'equipe')]
     private Collection $joueurs;
 
-    #[ORM\Column(nullable: true)]
-    private ?int $total_point = null;
+    
 
     public function __construct()
     {

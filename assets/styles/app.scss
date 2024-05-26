@@ -2,17 +2,12 @@
 @import "./sass/variables";
 @import "./sass/general";
 
-
-
-
 @import "./sass/small/all.scss";
-
 
 
 @media (min-width: 768px) {
     @import "./sass/medium/all.scss";
 }
-
 
 
 @media (min-width: 1200px) {

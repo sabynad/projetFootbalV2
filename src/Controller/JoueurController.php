@@ -22,7 +22,7 @@ class JoueurController extends AbstractController
         ]);
     }
 
-    // methode qui definie l'affichage des crtes joueurs
+    // methode qui definie l'affichage des cartes joueurs
     #[Route('/cards', name: 'app_joueur_cards', methods: ['GET'])]
     public function showCards(JoueurRepository $joueurRepository): Response
     {

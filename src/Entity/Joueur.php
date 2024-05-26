@@ -2,11 +2,16 @@
 
 namespace App\Entity;
 
-use App\Repository\JoueurRepository;
+use Vich\UploadableField;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\JoueurRepository;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+
 
 #[ORM\Entity(repositoryClass: JoueurRepository::class)]
+#[Vich\Uploadable]
 class Joueur
 {
     #[ORM\Id]
@@ -67,6 +72,30 @@ class Joueur
 
     #[ORM\ManyToOne(inversedBy: 'joueurs')]
     private ?Equipe $equipe = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $joueur_image_name = null;
+
+
+
+   
+    #[Vich\UploadableField(mapping: 'logo_images', fileNameProperty: 'joueurImageName')]
+    private ?File $imageFile = null;
+
+    public function getImageFile(): ?File
+    {
+        return $this->imageFile;
+    }
+
+    public function setImageFile(?File $imageFile = null): void
+    {
+        $this->imageFile = $imageFile;
+
+    }
+
+
+
+
 
     public function getId(): ?int
     {
@@ -288,4 +317,23 @@ class Joueur
 
         return $this;
     }
+
+    public function getJoueurImageName(): ?string
+    {
+        return $this->joueur_image_name;
+    }
+
+    public function setJoueurImageName(string $joueur_image_name): static
+    {
+        $this->joueur_image_name = $joueur_image_name;
+
+        return $this;
+    }
+
+ 
+
+
+
+
+
 }
