@@ -9,7 +9,7 @@
    
     .profil-img{
         flex-direction: column;
-        border: 1px solid red;
+        // border: 1px solid red;
         width: 80%;
         margin: 1rem auto;
         display: flex;
@@ -17,32 +17,26 @@
         align-items: center;
     }
     .box-stat{
-        border: 1px solid black;
+        // border: 1px solid black;
         display: flex;
         flex-direction: column;
         text-align: center;
         margin: auto;
         width: 80%; 
-        .match{
-        border: 1px solid yellow;
-        }
+        
         .carton{
-        border: 1px solid violet;
+        // border: 1px solid violet;
         display: flex;
         justify-content: center;
+ 
+        }
+        
 
-        }
-        .passe{
-            border: 1px solid green;
-        }
-        .tir{
-            border: 1px solid blue;
-        }
         
     }
    .btn-stat{
         border: 1px solid black;
-        width: 10%;
+        width: 30%;
         margin: auto;
    
    }

@@ -20,6 +20,15 @@
         height: 650px;
         margin-top: -100px ; 
     }  
+    .box-score-class{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .equipe-score-match{
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 // bloc actualité----------------------------------------------------------------------------------

@@ -38,6 +38,11 @@ security:
     access_control:
         - { path: ^/admin, roles: ROLE_ADMIN }
         - { path: ^/user, roles: ROLE_USER }
+        # controle d'acces
+        - { path: ^/joueur/new, roles: ROLE_ADMIN }
+        - { path: ^/joueur/edit, roles: ROLE_ADMIN }
+        - { path: ^/joueur/delete, roles: ROLE_ADMIN }
+
 
 when@test:
     security:

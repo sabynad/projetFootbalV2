@@ -21,6 +21,24 @@
                             <p>{{ joueur.poste }}</p>
                             <!-- Ajoutez d'autres informations du joueur ici -->
                             <a href="{{path('app_joueur_stat', {'id': joueur.id})}}" class="btn btn-danger mt-4 mb-4">Statistique</a>
+
+{# 
+                            <a href="{{ path('app_joueur_show', {'id': joueur.id}) }}" class="btn btn-primary mt-2">Voir</a>
+                            <a href="{{ path('app_joueur_edit', {'id': joueur.id}) }}" class="btn btn-warning mt-2">Modifier</a>
+                            <form method="post" action="{{ path('app_joueur_delete', {'id': joueur.id}) }}" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer ce joueur ?');" class="mt-2">
+                                <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ joueur.id) }}">
+                                <button class="btn btn-danger">Supprimer</button>
+                            </form> #}
+                            {% if is_granted('ROLE_ADMIN') %}
+                                <a href="{{ path('app_joueur_edit', {'id': joueur.id}) }}" class="btn btn-warning mt-2">Modifier</a>
+                                <a href="{{ path('app_joueur_show', {'id': joueur.id}) }}" class="btn btn-info mt-2">Afficher</a>
+                                <a href="{{ path('app_joueur_new') }}" class="btn btn-success mt-2">Ajouter</a>
+                                <form action="{{ path('app_joueur_delete', {'id': joueur.id}) }}" method="post" style="display: inline;">
+                                    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ joueur.id) }}">
+                                    <button type="submit" class="btn btn-primary mt-2">Supprimer</button>
+                                </form>
+                            {% endif %}
+
                         </div>
                     </div>
                 </div>

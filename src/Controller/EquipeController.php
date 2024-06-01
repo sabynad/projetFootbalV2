@@ -87,8 +87,14 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
             $scores[$equipe->getId()] = getEquipeScore($equipe->getId(), $this->repo, $matches, $matchesGagne, $matchesNul, $matchesPerdu);
         }
 
+        // tri du score par ordre décroissant 
+        usort($equipes, function($a, $b) use ($scores) {
+            return $scores[$b->getId()] <=> $scores[$a->getId()];
+        });
+        
+
         return $this->render('equipe/index.html.twig', [
-            'equipes' => $equipeRepository->findAll(),
+            'equipes' => $equipes,
             'scores' => $scores,
             'matches' => $matches,
             'matchesGagne' => $matchesGagne,

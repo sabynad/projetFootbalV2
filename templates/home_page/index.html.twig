@@ -27,46 +27,47 @@
 
                 {# recupere le dernier match de l'equipe de six-fours avec date et logo des deux equipes #}
                 {% if lastMatchSixFours %}
-                    <div class="date-match">
-                        <p>{{ lastMatchSixFours.date |date('d-m-Y') }}</p>
-                    </div>
-                    <div class="logo-match">
-                        <img src="{{ '/images/logo/' ~ lastMatchSixFours.equipe1.imageName }}">
-                        <img src="{{ '/images/logo/' ~ lastMatchSixFours.equipe2.imageName }}">
-                    </div>
+                <div class="date-match">
+                    <p>{{ lastMatchSixFours.date |date('d-m-Y') }}</p>
+                </div>
+                <div class="logo-match">
+                    <img src="{{ '/images/logo/' ~ lastMatchSixFours.equipe1.imageName }}">
+                    <img src="{{ '/images/logo/' ~ lastMatchSixFours.equipe2.imageName }}">
+                </div>
+                <div class="box-score-class">
                     <div class="equipe-score-match">
                         <p>{{ lastMatchSixFours.equipe1.nom }} <span class="versus">vs</span> {{ lastMatchSixFours.equipe2.nom }}</p>
                         <p>{{ lastMatchSixFours.scoreEquipe1 }} - {{ lastMatchSixFours.scoreEquipe2 }}</p>
-                        <a href="{{path('app_opposition_index')}}"> Voir tous les matchs </a>
+                        <div class="all-matchs">
+                            <a href="{{path('app_opposition_index')}}"> Voir tous les matchs </a>
+                        </div>
                     </div>
-                {% else %}
-                    <p>Aucun match trouvé.</p>
-                {% endif %}
+                    {% else %}
+                        <p>Aucun match trouvé.</p>
+                    {% endif %}
 
 
-                {# récupère les 4 premier equipes du classement avec points match joue ect #}
-                <div class="classement-match">
-                    <p> Classement</p>
-                    {# {{ dump(scores) }} #}
-                    {% for equipe in equipes|slice(0, 4) %}
-                        <div class="stat-match">
-                            <div class="nom-equipe">
-                                <p>{{ equipe.nom }}</p>
-                                
-                            </div>
+                    {# récupère les 4 premier equipes du classement avec points match joue ect #}
+                    <div class="classement-match">
+                        <p> Classement</p>
+                        {# {{ dump(scores) }} #}
+                        {% for equipe in equipes|slice(0, 4) %}
+                            <div class="stat-match">
+                                <div class="nom-equipe">
+                                    <p>{{ equipe.nom }}</p>                         
+                                </div>
 
 
-                            {# <p>{{ scores[equipe.id] }}</p>  #}
-                            {# <p>{{ matches[equipe.id] }}</p>
-                            <p>{{ matchesGagne[equipe.id] }}</p>
-                            <p>{{ matchesNul[equipe.id] }}</p>
-                            <p>{{ matchesPerdu[equipe.id] }}</p> #}
-                        </div>   
-                    {% endfor %}
-                    <a href="{{path('app_equipe_index')}}"> Voir tous le classement </a>  
-                </div>           
-                   
-                
+                                {# <p>{{ scores[equipe.id] }}</p>  #}
+                                {# <p>{{ matches[equipe.id] }}</p>
+                                <p>{{ matchesGagne[equipe.id] }}</p>
+                                <p>{{ matchesNul[equipe.id] }}</p>
+                                <p>{{ matchesPerdu[equipe.id] }}</p> #}
+                            </div>   
+                        {% endfor %}
+                        <a href="{{path('app_equipe_index')}}"> Voir tous le classement </a>  
+                    </div>  
+                </div>              
             </div>   
         </section>
 
